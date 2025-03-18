@@ -1,0 +1,262 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>vue | 林泉幽梦</title><meta name="author" content="林泉幽梦"><meta name="copyright" content="林泉幽梦"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="Vue1. Vue生命周期 beforeCreate created beforeMount mounted beforeUpdate updated beforeDestroy destroyed  2. Vue双向绑定原理 Vue.js 是采用数据劫持结合发布者-订阅者模式的方式，通过Object.defineProperty()来劫持各个属性的setter，getter，在数据变动时发布消息">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue">
+<meta property="og:url" content="http://example.com/posts/c0add594.html">
+<meta property="og:site_name" content="林泉幽梦">
+<meta property="og:description" content="Vue1. Vue生命周期 beforeCreate created beforeMount mounted beforeUpdate updated beforeDestroy destroyed  2. Vue双向绑定原理 Vue.js 是采用数据劫持结合发布者-订阅者模式的方式，通过Object.defineProperty()来劫持各个属性的setter，getter，在数据变动时发布消息">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://lys-1312655971.cos.ap-guangzhou.myqcloud.com/blog-images%2Favatar.jpg">
+<meta property="article:published_time" content="2025-03-18T12:53:00.000Z">
+<meta property="article:modified_time" content="2025-03-18T14:07:42.318Z">
+<meta property="article:author" content="林泉幽梦">
+<meta property="article:tag" content="vue">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lys-1312655971.cos.ap-guangzhou.myqcloud.com/blog-images%2Favatar.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "vue",
+  "url": "http://example.com/posts/c0add594.html",
+  "image": "https://lys-1312655971.cos.ap-guangzhou.myqcloud.com/blog-images%2Favatar.jpg",
+  "datePublished": "2025-03-18T12:53:00.000Z",
+  "dateModified": "2025-03-18T14:07:42.318Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "林泉幽梦",
+      "url": "http://example.com/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="https://lys-1312655971.cos.ap-guangzhou.myqcloud.com/blog-images%2Ftop-image%2F%E5%8A%A8%E6%BC%AB%E5%B0%91%E5%A5%B3-%E5%B0%91%E5%A5%B3.png"><link rel="canonical" href="http://example.com/posts/c0add594.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#f0f9eb","bgDark":"#1f1f1f","position":"top-center"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'vue',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load', preloader.endLoading)
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://lys-1312655971.cos.ap-guangzhou.myqcloud.com/blog-images%2Favatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 页面</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-book"></i><span> 文档</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/posts/tech/"><i class="fa-fw fas fa-book-open"></i><span> 学习</span></a></li><li><a class="site-page child" href="/hobby/"><i class="fa-fw fas fa-book-open"></i><span> 生活</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">林泉幽梦</span></a><a class="nav-page-title" href="/"><span class="site-name">vue</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 页面</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-book"></i><span> 文档</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/posts/tech/"><i class="fa-fw fas fa-book-open"></i><span> 学习</span></a></li><li><a class="site-page child" href="/hobby/"><i class="fa-fw fas fa-book-open"></i><span> 生活</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">vue</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-03-18T12:53:00.000Z" title="发表于 2025-03-18 20:53:00">2025-03-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-03-18T14:07:42.318Z" title="更新于 2025-03-18 22:07:42">2025-03-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/">前端知识</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;距更新已经超过&quot;,&quot;messageNext&quot;:&quot;内容可能不再生效&quot;,&quot;postUpdate&quot;:&quot;2025-03-18 22:07:42&quot;}" hidden></div><h3 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h3><h4 id="1-Vue生命周期"><a href="#1-Vue生命周期" class="headerlink" title="1. Vue生命周期"></a>1. Vue生命周期</h4><ul>
+<li>beforeCreate</li>
+<li>created</li>
+<li>beforeMount</li>
+<li>mounted</li>
+<li>beforeUpdate</li>
+<li>updated</li>
+<li>beforeDestroy</li>
+<li>destroyed</li>
+</ul>
+<h4 id="2-Vue双向绑定原理"><a href="#2-Vue双向绑定原理" class="headerlink" title="2. Vue双向绑定原理"></a>2. Vue双向绑定原理</h4><ul>
+<li>Vue.js 是采用数据劫持结合发布者-订阅者模式的方式，通过Object.defineProperty()来劫持各个属性的setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。</li>
+</ul>
+<h4 id="3-Vue组件通信"><a href="#3-Vue组件通信" class="headerlink" title="3. Vue组件通信"></a>3. Vue组件通信</h4><ul>
+<li>父子组件通信：props和$emit</li>
+<li>兄弟组件通信：$emit和$on</li>
+<li>跨级组件通信：$emit和$on、provide和inject、$attrs和$listeners</li>
+<li>全局状态管理：Vuex</li>
+</ul>
+<h4 id="4-Vue路由"><a href="#4-Vue路由" class="headerlink" title="4. Vue路由"></a>4. Vue路由</h4><ul>
+<li>Vue Router 是 Vue.js 官方的路由管理器。它和 Vue.js 的核心深度集成，让构建单页面应用变得易如反掌。</li>
+<li>Vue Router 默认 hash 模式 —— 使用 URL 的 hash 来模拟一个完整的 URL，于是当 URL 改变时，页面不会重新加载。</li>
+<li>Vue Router 支持路由嵌套、动态路由匹配、路由守卫等功能。</li>
+</ul>
+<h4 id="5-Vue虚拟DOM"><a href="#5-Vue虚拟DOM" class="headerlink" title="5. Vue虚拟DOM"></a>5. Vue虚拟DOM</h4><ul>
+<li>虚拟DOM是对真实DOM的抽象，它以JavaScript对象的形式保存在内存中，然后通过一系列操作使这个虚拟DOM和真实DOM保持同步。</li>
+<li>虚拟DOM的优点是：减少了对真实DOM的操作，提高了性能；可以跨平台操作，比如Web端、小程序端等。</li>
+</ul>
+<h4 id="6-Vue响应式原理"><a href="#6-Vue响应式原理" class="headerlink" title="6. Vue响应式原理"></a>6. Vue响应式原理</h4><ul>
+<li>Vue.js 是采用数据劫持结合发布者-订阅者模式的方式，通过Object.defineProperty()来劫持各个属性的setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。</li>
+<li>Vue.js 2.x 中，使用 Object.defineProperty() 来劫持各个属性的 setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。</li>
+<li>Vue.js 3.x 中，使用 Proxy 来劫持各个属性的 setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。</li>
+<li>Vue.js 3.x 中，使用 Proxy 来劫持各个属性的 setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。</li>
+</ul>
+<h4 id="7-Vue组件化"><a href="#7-Vue组件化" class="headerlink" title="7. Vue组件化"></a>7. Vue组件化</h4><ul>
+<li>组件化是Vue.js的核心思想之一，它允许我们将页面拆分成多个独立的、可复用的组件，从而提高代码的可维护性和可复用性。</li>
+<li>Vue.js 提供了组件化的支持，包括组件的定义、注册、使用等。</li>
+<li>Vue.js 组件可以包含模板、脚本、样式等，它们可以独立存在，也可以嵌套使用。</li>
+</ul>
+<h4 id="8-Vue指令"><a href="#8-Vue指令" class="headerlink" title="8. Vue指令"></a>8. Vue指令</h4><ul>
+<li>Vue.js 提供了一系列的指令，用于在模板中绑定数据、事件、样式等。</li>
+<li>常见的指令有：v-bind、v-model、v-for、v-if、v-show、v-on等。</li>
+<li>v-bind：用于绑定属性，例如：v-bind:src&#x3D;”imageSrc”。</li>
+<li>v-model：用于双向绑定数据，例如：v-model&#x3D;”message”。</li>
+<li>v-for：用于循环渲染列表，例如：v-for&#x3D;”item in items”。</li>
+<li>v-if：用于条件渲染，例如：v-if&#x3D;”show”。</li>
+<li>v-show：用于条件渲染，例如：v-show&#x3D;”show”。</li>
+<li>v-on：用于绑定事件，例如：v-on:click&#x3D;”handleClick”。</li>
+</ul>
+<h4 id="9-Vue组件通信"><a href="#9-Vue组件通信" class="headerlink" title="9. Vue组件通信"></a>9. Vue组件通信</h4><ul>
+<li>父子组件通信：props和$emit</li>
+<li>兄弟组件通信：$emit和$on</li>
+<li>跨级组件通信：$emit和$on、provide和inject、$attrs和$listeners</li>
+<li>全局状态管理：Vuex</li>
+</ul>
+<h4 id="10-Vue路由"><a href="#10-Vue路由" class="headerlink" title="10. Vue路由"></a>10. Vue路由</h4><ul>
+<li>Vue Router 是 Vue.js 官方的路由管理器。它和 Vue.js 的核心深度集成，让构建单页面应用变得易如反掌。</li>
+<li>Vue Router 默认 hash 模式 —— 使用 URL 的 hash 来模拟一个完整的 URL，于是当 URL 改变时，页面不会重新加载。</li>
+<li>Vue Router 支持路由嵌套、动态路由匹配、路由守卫等功能。</li>
+</ul>
+<h4 id="11-Vue虚拟DOM"><a href="#11-Vue虚拟DOM" class="headerlink" title="11. Vue虚拟DOM"></a>11. Vue虚拟DOM</h4><ul>
+<li>虚拟DOM是对真实DOM的抽象，它以JavaScript对象的形式保存在内存中，然后通过一系列操作使这个虚拟DOM和真实DOM保持同步。</li>
+<li>虚拟DOM的优点是：减少了对真实DOM的操作，提高了性能；可以跨平台操作，比如Web端、小程序端等。</li>
+</ul>
+<h4 id="12-Vue响应式原理"><a href="#12-Vue响应式原理" class="headerlink" title="12. Vue响应式原理"></a>12. Vue响应式原理</h4><ul>
+<li>Vue.js 是采用数据劫持结合发布者-订阅者模式的方式，通过Object.defineProperty()来劫持各个属性的setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。</li>
+<li>Vue.js 2.x 中，使用 Object.defineProperty() 来劫持各个属性的 setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。</li>
+<li>Vue.js 3.x 中，使用 Proxy 来劫持各个属性的 setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。</li>
+<li>Vue.js 3.x 中，使用 Proxy 来劫持各个属性的 setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。</li>
+</ul>
+<h4 id="13-Vue组件化"><a href="#13-Vue组件化" class="headerlink" title="13. Vue组件化"></a>13. Vue组件化</h4><ul>
+<li>组件化是Vue.js的核心思想之一，它允许我们将页面拆分成多个独立的、可复用的组件，从而提高代码的可维护性和可复用性。</li>
+<li>Vue.js 提供了组件化的支持，包括组件的定义、注册、使用等。</li>
+<li>Vue.js 组件可以包含模板、脚本、样式等，它们可以独立存在，也可以嵌套使用。</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">林泉幽梦</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/posts/c0add594.html">http://example.com/posts/c0add594.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">林泉幽梦</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/vue/">vue</a></div><div class="post-share"><div class="social-share" data-image="https://lys-1312655971.cos.ap-guangzhou.myqcloud.com/blog-images%2Favatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related  no-desc" href="/posts/b9eb6b52.html" title="butterfly 主题配置"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://lys-1312655971.cos.ap-guangzhou.myqcloud.com/blog-images%2Ftop-image%2F%E4%BA%8C%E6%AC%A1%E5%85%83-%E5%8A%A8%E6%BC%AB.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">butterfly 主题配置</div></div></div></a><a class="pagination-related" href="/posts/d044eab7.html" title="TypeScript"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">TypeScript</div></div><div class="info-2"><div class="info-item-1">TypeScript1. 基础类型1.1 基本类型123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960// 布尔值let isDone: boolean = false;// 数字let decLiteral: number = 6;let hexLiteral: number = 0xf00d;let binaryLiteral: number = 0b1010;let octalLiteral: number = 0o744;// 字符串---let name: string = &quot;bob&quot;;name = &quot;smith&quot;;// 数组let list: number[] = [1, 2, 3];let list: Array&lt;number&gt; = [1, 2, 3];// 元组let x: [string, number];x =...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://lys-1312655971.cos.ap-guangzhou.myqcloud.com/blog-images%2Favatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">林泉幽梦</div><div class="author-info-description">先相信你自己，然后别人才会相信你</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/LiYuanSen0912"><i class="fab fa-github"></i><span>关注我</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/liyuansen0912" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="/2132793141@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue"><span class="toc-number">1.</span> <span class="toc-text">Vue</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">1.1.</span> <span class="toc-text">1. Vue生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Vue%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text">2. Vue双向绑定原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Vue%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1"><span class="toc-number">1.3.</span> <span class="toc-text">3. Vue组件通信</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Vue%E8%B7%AF%E7%94%B1"><span class="toc-number">1.4.</span> <span class="toc-text">4. Vue路由</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-Vue%E8%99%9A%E6%8B%9FDOM"><span class="toc-number">1.5.</span> <span class="toc-text">5. Vue虚拟DOM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-Vue%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86"><span class="toc-number">1.6.</span> <span class="toc-text">6. Vue响应式原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-Vue%E7%BB%84%E4%BB%B6%E5%8C%96"><span class="toc-number">1.7.</span> <span class="toc-text">7. Vue组件化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-Vue%E6%8C%87%E4%BB%A4"><span class="toc-number">1.8.</span> <span class="toc-text">8. Vue指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-Vue%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1"><span class="toc-number">1.9.</span> <span class="toc-text">9. Vue组件通信</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-Vue%E8%B7%AF%E7%94%B1"><span class="toc-number">1.10.</span> <span class="toc-text">10. Vue路由</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-Vue%E8%99%9A%E6%8B%9FDOM"><span class="toc-number">1.11.</span> <span class="toc-text">11. Vue虚拟DOM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-Vue%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86"><span class="toc-number">1.12.</span> <span class="toc-text">12. Vue响应式原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-Vue%E7%BB%84%E4%BB%B6%E5%8C%96"><span class="toc-number">1.13.</span> <span class="toc-text">13. Vue组件化</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/d044eab7.html" title="TypeScript">TypeScript</a><time datetime="2025-03-18T13:26:00.000Z" title="发表于 2025-03-18 21:26:00">2025-03-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/c0add594.html" title="vue">vue</a><time datetime="2025-03-18T12:53:00.000Z" title="发表于 2025-03-18 20:53:00">2025-03-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/b9eb6b52.html" title="butterfly 主题配置"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://lys-1312655971.cos.ap-guangzhou.myqcloud.com/blog-images%2Ftop-image%2F%E4%BA%8C%E6%AC%A1%E5%85%83-%E5%8A%A8%E6%BC%AB.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="butterfly 主题配置"/></a><div class="content"><a class="title" href="/posts/b9eb6b52.html" title="butterfly 主题配置">butterfly 主题配置</a><time datetime="2025-03-16T16:54:23.674Z" title="发表于 2025-03-17 00:54:23">2025-03-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/d8a440d1.html" title="React"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://lys-1312655971.cos.ap-guangzhou.myqcloud.com/fd4769f24828cdf4b2e2d03e1a752b80%20(1).png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="React"/></a><div class="content"><a class="title" href="/posts/d8a440d1.html" title="React">React</a><time datetime="2025-03-16T08:32:00.000Z" title="发表于 2025-03-16 16:32:00">2025-03-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/c6727595.html" title="初音未来——虚拟偶像的奇迹"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://lys-1312655971.cos.ap-guangzhou.myqcloud.com/blog-images%2Ftop-image%2Ftop2_20250314_232845.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="初音未来——虚拟偶像的奇迹"/></a><div class="content"><a class="title" href="/posts/c6727595.html" title="初音未来——虚拟偶像的奇迹">初音未来——虚拟偶像的奇迹</a><time datetime="2025-03-14T15:23:00.000Z" title="发表于 2025-03-14 23:23:00">2025-03-14</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://lys-1312655971.cos.ap-guangzhou.myqcloud.com/blog-images%2Ftop-image%2F%E5%90%8A%E5%BA%8A-%E5%AE%89%E9%80%B8-%E6%8F%92%E7%94%BB.png);"><div id="footer-wrap"><div class="copyright">&copy;2025 By 林泉幽梦</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="初音未来,三玖,六花,亚丝娜,薇尔莉特,纱雾,艾拉,小埋,加藤恵,爱蜜莉雅,蕾姆,远坂凛,saber,间桐樱,时崎狂三,鸢一折纸,十香,雪乃,我妻由乃,白井黑子,灵梦,椎名真白,樱岛麻衣,牧濑红莉栖,c.c,2,春日野穹,立华奏,栗山未来,千反田爱瑠,宫园薰,楪祈,古河渚,秋山澪,平泽唯,凉宫春日,绫波丽,御坂美琴,喜多川海梦,四宫辉夜,明日香" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":180,"height":360,"hOffset":0,"vOffset":-100},"mobile":{"show":true},"react":{"opacity":0.85},"log":false});</script></body></html>
