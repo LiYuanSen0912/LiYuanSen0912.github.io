@@ -1,0 +1,2004 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>前端技术知识总结 | 林泉幽梦</title><meta name="author" content="林泉幽梦"><meta name="copyright" content="林泉幽梦"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="一个便于AI爬取的前端技术知识总结网站，包含JavaScript、MDN、React、Vue、Angular、微信小程序、支付宝小程序等核心前端技术文档的简明总结和官方链接。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端技术知识总结">
+<meta property="og:url" content="http://example.com/posts/0.html">
+<meta property="og:site_name" content="林泉幽梦">
+<meta property="og:description" content="一个便于AI爬取的前端技术知识总结网站，包含JavaScript、MDN、React、Vue、Angular、微信小程序、支付宝小程序等核心前端技术文档的简明总结和官方链接。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://lys-1312655971.cos.ap-guangzhou.myqcloud.com/blog-images/top-image/%E7%99%BD%E5%8E%84.jpg">
+<meta property="article:published_time" content="2025-07-02T14:38:33.000Z">
+<meta property="article:modified_time" content="2025-07-02T14:38:33.000Z">
+<meta property="article:author" content="林泉幽梦">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="React">
+<meta property="article:tag" content="Vue">
+<meta property="article:tag" content="小程序">
+<meta property="article:tag" content="移动开发">
+<meta property="article:tag" content="前端框架">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lys-1312655971.cos.ap-guangzhou.myqcloud.com/blog-images/top-image/%E7%99%BD%E5%8E%84.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "前端技术知识总结",
+  "url": "http://example.com/posts/0.html",
+  "image": "https://lys-1312655971.cos.ap-guangzhou.myqcloud.com/blog-images/top-image/白厄.jpg",
+  "datePublished": "2025-07-02T14:38:33.000Z",
+  "dateModified": "2025-07-02T14:38:33.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "林泉幽梦",
+      "url": "http://example.com/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="https://lys-1312655971.cos.ap-guangzhou.myqcloud.com/blog-images%2Ftop-image%2F%E5%8A%A8%E6%BC%AB%E5%B0%91%E5%A5%B3-%E5%B0%91%E5%A5%B3.png"><link rel="canonical" href="http://example.com/posts/0.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#f0f9eb","bgDark":"#1f1f1f","position":"top-center"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '前端技术知识总结',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load', preloader.endLoading)
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://lys-1312655971.cos.ap-guangzhou.myqcloud.com/blog-images%2Favatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 页面</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-book"></i><span> 文档</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/posts/tech/"><i class="fa-fw fas fa-book-open"></i><span> 学习</span></a></li><li><a class="site-page child" href="/hobby/"><i class="fa-fw fas fa-book-open"></i><span> 生活</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://lys-1312655971.cos.ap-guangzhou.myqcloud.com/blog-images/top-image/白厄.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">林泉幽梦</span></a><a class="nav-page-title" href="/"><span class="site-name">前端技术知识总结</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 页面</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-book"></i><span> 文档</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/posts/tech/"><i class="fa-fw fas fa-book-open"></i><span> 学习</span></a></li><li><a class="site-page child" href="/hobby/"><i class="fa-fw fas fa-book-open"></i><span> 生活</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">前端技术知识总结</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-07-02T14:38:33.000Z" title="发表于 2025-07-02 22:38:33">2025-07-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-07-02T14:38:33.000Z" title="更新于 2025-07-02 22:38:33">2025-07-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/">前端开发</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;距更新已经超过&quot;,&quot;messageNext&quot;:&quot;内容可能不再生效&quot;,&quot;postUpdate&quot;:&quot;2025-07-02 22:38:33&quot;}" hidden></div><!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>前端技术知识总结</title>
+  <meta name="description" content="一个便于AI爬取的前端技术知识总结网站，包含JavaScript、MDN、React、Vue、Angular、微信小程序、支付宝小程序等核心前端技术文档的简明总结和官方链接。">
+  <meta name="robots" content="index, follow">
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#165DFF',
+            secondary: '#7B61FF',
+            accent: '#00C48C',
+            dark: '#1D2129',
+            light: '#F2F3F5',
+            // 新增颜色
+            wechat: '#7BB32E',
+            alipay: '#00A0E9',
+            flutter: '#02569B',
+            uni: '#007AFF',
+            taro: '#12B7F5',
+            reactNative: '#61DAFB',
+            vite: '#646CFF',
+            webpack: '#8DD6F9',
+            rollup: '#EC4A3F',
+            electron: '#2B2E3A',
+            ionic: '#3880FF',
+            quasar: '#1976D2',
+            nuxt: '#00DC82',
+            next: '#000000',
+            svelte: '#FF3E00',
+            preact: '#673AB7',
+            solid: '#2C4F7C',
+            jquery: '#0769AD',
+            three: '#000000',
+            chart: '#FF6384',
+            map: '#0066CC',
+            form: '#4CAF50',
+            ui: '#7B61FF',
+            util: '#FF9800',
+            state: '#9C27B0',
+            router: '#E91E63',
+            test: '#FFC107',
+            build: '#607D8B',
+            css: '#264DE4',
+            animation: '#FF5722',
+            http: '#03A9F4',
+            storage: '#8BC34A',
+            i18n: '#FF9800',
+            editor: '#795548',
+            media: '#9C27B0',
+            payment: '#FF5722',
+            analytics: '#673AB7',
+            security: '#F44336',
+            deploy: '#607D8B',
+          },
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .text-balance {
+        text-wrap: balance;
+      }
+      .card-shadow {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      }
+      .card-hover {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      }
+      .tech-tag {
+        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium mr-2 mb-2;
+      }
+      .tech-tag-primary {
+        @apply bg-primary/10 text-primary;
+      }
+      .tech-tag-secondary {
+        @apply bg-secondary/10 text-secondary;
+      }
+      .tech-tag-accent {
+        @apply bg-accent/10 text-accent;
+      }
+      .tech-tag-wechat {
+        @apply bg-wechat/10 text-wechat;
+      }
+      .tech-tag-alipay {
+        @apply bg-alipay/10 text-alipay;
+      }
+      .tech-tag-flutter {
+        @apply bg-flutter/10 text-flutter;
+      }
+      .tech-tag-uni {
+        @apply bg-uni/10 text-uni;
+      }
+      .tech-tag-taro {
+        @apply bg-taro/10 text-taro;
+      }
+      .tech-tag-reactNative {
+        @apply bg-reactNative/10 text-reactNative;
+      }
+      .tech-tag-vite {
+        @apply bg-vite/10 text-vite;
+      }
+      .tech-tag-webpack {
+        @apply bg-webpack/10 text-webpack;
+      }
+      .tech-tag-rollup {
+        @apply bg-rollup/10 text-rollup;
+      }
+      .tech-tag-electron {
+        @apply bg-electron/10 text-electron;
+      }
+      .tech-tag-ionic {
+        @apply bg-ionic/10 text-ionic;
+      }
+      .tech-tag-quasar {
+        @apply bg-quasar/10 text-quasar;
+      }
+      .tech-tag-nuxt {
+        @apply bg-nuxt/10 text-nuxt;
+      }
+      .tech-tag-next {
+        @apply bg-next/10 text-next;
+      }
+      .tech-tag-svelte {
+        @apply bg-svelte/10 text-svelte;
+      }
+      .tech-tag-preact {
+        @apply bg-preact/10 text-preact;
+      }
+      .tech-tag-solid {
+        @apply bg-solid/10 text-solid;
+      }
+      .tech-tag-jquery {
+        @apply bg-jquery/10 text-jquery;
+      }
+      .tech-tag-three {
+        @apply bg-three/10 text-three;
+      }
+      .tech-tag-chart {
+        @apply bg-chart/10 text-chart;
+      }
+      .tech-tag-map {
+        @apply bg-map/10 text-map;
+      }
+      .tech-tag-form {
+        @apply bg-form/10 text-form;
+      }
+      .tech-tag-ui {
+        @apply bg-ui/10 text-ui;
+      }
+      .tech-tag-util {
+        @apply bg-util/10 text-util;
+      }
+      .tech-tag-state {
+        @apply bg-state/10 text-state;
+      }
+      .tech-tag-router {
+        @apply bg-router/10 text-router;
+      }
+      .tech-tag-test {
+        @apply bg-test/10 text-test;
+      }
+      .tech-tag-build {
+        @apply bg-build/10 text-build;
+      }
+      .tech-tag-css {
+        @apply bg-css/10 text-css;
+      }
+      .tech-tag-animation {
+        @apply bg-animation/10 text-animation;
+      }
+      .tech-tag-http {
+        @apply bg-http/10 text-http;
+      }
+      .tech-tag-storage {
+        @apply bg-storage/10 text-storage;
+      }
+      .tech-tag-i18n {
+        @apply bg-i18n/10 text-i18n;
+      }
+      .tech-tag-editor {
+        @apply bg-editor/10 text-editor;
+      }
+      .tech-tag-media {
+        @apply bg-media/10 text-media;
+      }
+      .tech-tag-payment {
+        @apply bg-payment/10 text-payment;
+      }
+      .tech-tag-analytics {
+        @apply bg-analytics/10 text-analytics;
+      }
+      .tech-tag-security {
+        @apply bg-security/10 text-security;
+      }
+      .tech-tag-deploy {
+        @apply bg-deploy/10 text-deploy;
+      }
+    }
+  </style>
+</head>
+<body class="font-inter bg-light text-dark min-h-screen flex flex-col">
+  <!-- 导航栏 -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm transition-all duration-300">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="#" class="flex items-center">
+            <i class="fa fa-code text-primary text-2xl mr-2"></i>
+            <span class="font-bold text-xl text-dark">前端知识库</span>
+          </a>
+        </div>
+        <nav class="hidden md:flex space-x-4 lg:space-x-8">
+          <a href="#javascript" class="text-dark hover:text-primary transition-colors duration-200 font-medium">JavaScript</a>
+          <a href="#frameworks" class="text-dark hover:text-primary transition-colors duration-200 font-medium">框架</a>
+          <a href="#miniapp" class="text-dark hover:text-primary transition-colors duration-200 font-medium">小程序</a>
+          <a href="#mobile" class="text-dark hover:text-primary transition-colors duration-200 font-medium">移动应用</a>
+          <a href="#tools" class="text-dark hover:text-primary transition-colors duration-200 font-medium">工具库</a>
+          <a href="#resources" class="text-dark hover:text-primary transition-colors duration-200 font-medium">资源</a>
+        </nav>
+        <div class="md:hidden">
+          <button type="button" class="text-dark hover:text-primary" id="mobile-menu-button">
+            <i class="fa fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 移动端菜单 -->
+    <div class="md:hidden hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+        <a href="#javascript" class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:bg-primary/5 hover:text-primary">JavaScript</a>
+        <a href="#frameworks" class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:bg-primary/5 hover:text-primary">框架</a>
+        <a href="#miniapp" class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:bg-primary/5 hover:text-primary">小程序</a>
+        <a href="#mobile" class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:bg-primary/5 hover:text-primary">移动应用</a>
+        <a href="#tools" class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:bg-primary/5 hover:text-primary">工具库</a>
+        <a href="#resources" class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:bg-primary/5 hover:text-primary">资源</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 英雄区域 -->
+  <section class="relative bg-gradient-to-br from-primary/10 to-secondary/10 py-16 md:py-24">
+    <div class="absolute inset-0 overflow-hidden opacity-20">
+      <div class="absolute -right-10 -top-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
+      <div class="absolute left-1/2 top-1/2 w-96 h-96 bg-secondary/20 rounded-full blur-3xl"></div>
+      <div class="absolute -left-10 -bottom-10 w-64 h-64 bg-accent/20 rounded-full blur-3xl"></div>
+    </div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-dark leading-tight mb-6">
+          前端技术知识<span class="text-primary">总结</span>
+        </h1>
+        <p class="text-[clamp(1rem,2vw,1.25rem)] text-gray-600 mb-8 text-balance">
+          一个精心整理的前端技术文档集合，帮助开发者快速掌握核心概念并找到官方资源。
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="#javascript" class="px-6 py-3 bg-primary text-white rounded-lg shadow-lg hover:bg-primary/90 transition-all duration-300 transform hover:-translate-y-1">
+            <i class="fa fa-js-square mr-2"></i>JavaScript
+          </a>
+          <a href="#miniapp" class="px-6 py-3 bg-wechat text-white rounded-lg shadow-lg hover:bg-wechat/90 transition-all duration-300 transform hover:-translate-y-1">
+            <i class="fa fa-wechat mr-2"></i>小程序
+          </a>
+          <a href="#frameworks" class="px-6 py-3 bg-white text-dark border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+            <i class="fa fa-th-large mr-2"></i>框架
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主要内容区域 -->
+  <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- 介绍部分 -->
+    <section class="mb-16 text-center max-w-3xl mx-auto">
+      <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">关于这个网站</h2>
+      <p class="text-gray-600 text-lg mb-8">
+        本网站专为AI爬取而设计，提供了全面的前端技术知识总结。每个技术条目都包含核心概念、关键特性和官方文档链接，方便开发者快速查阅和AI系统抓取信息。
+      </p>
+      <div class="flex flex-wrap justify-center gap-8">
+        <div class="flex flex-col items-center p-4">
+          <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+            <i class="fa fa-code text-primary text-2xl"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2">技术总结</h3>
+          <p class="text-gray-600 text-center">简明扼要的技术核心概念</p>
+        </div>
+        <div class="flex flex-col items-center p-4">
+          <div class="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mb-4">
+            <i class="fa fa-link text-secondary text-2xl"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2">官方链接</h3>
+          <p class="text-gray-600 text-center">直达官方文档的权威资源</p>
+        </div>
+        <div class="flex flex-col items-center p-4">
+          <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-4">
+            <i class="fa fa-sitemap text-accent text-2xl"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2">结构化内容</h3>
+          <p class="text-gray-600 text-center">便于AI系统理解的清晰结构</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 技术知识卡片区域 -->
+    <section id="javascript" class="mb-20 scroll-mt-20">
+      <div class="flex items-center mb-8">
+        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+          <i class="fa fa-js-square text-primary text-2xl"></i>
+        </div>
+        <div>
+          <h2 class="text-[clamp(1.25rem,2vw,1.75rem)] font-bold text-dark">JavaScript</h2>
+          <p class="text-gray-500">Web开发的核心编程语言</p>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl p-6 card-shadow card-hover">
+          <h3 class="text-xl font-semibold mb-4 flex items-center">
+            <i class="fa fa-info-circle text-primary mr-2"></i>核心概念
+          </h3>
+          <p class="text-gray-600 mb-4">
+            JavaScript是一种高级的、解释型的编程语言，是Web开发的三大核心技术之一（HTML、CSS、JavaScript）。它可以在浏览器中运行，也可以在服务器端（Node.js）运行。
+          </p>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+              <span>动态类型、弱类型语言</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+              <span>支持面向对象、函数式和过程式编程范式</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+              <span>基于原型的继承机制</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+              <span>异步编程模型（Promise、async/await）</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 card-shadow card-hover">
+          <h3 class="text-xl font-semibold mb-4 flex items-center">
+            <i class="fa fa-star text-secondary mr-2"></i>关键特性
+          </h3>
+          <ul class="space-y-3 text-gray-600">
+            <li>
+              <h4 class="font-medium text-dark">ES6+ 特性</h4>
+              <p class="text-sm">箭头函数、解构赋值、扩展运算符、class类、Promise等现代语法</p>
+            </li>
+            <li>
+              <h4 class="font-medium text-dark">DOM操作</h4>
+              <p class="text-sm">可以动态修改网页内容、结构和样式</p>
+            </li>
+            <li>
+              <h4 class="font-medium text-dark">事件处理</h4>
+              <p class="text-sm">监听和响应用户交互（点击、滚动、键盘输入等）</p>
+            </li>
+            <li>
+              <h4 class="font-medium text-dark">AJAX/Fetch API</h4>
+              <p class="text-sm">无需刷新整个页面即可与服务器进行异步通信</p>
+            </li>
+          </ul>
+          <div class="mt-6">
+            <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript" target="_blank" class="inline-flex items-center text-primary font-medium hover:underline">
+              <span>MDN JavaScript文档</span>
+              <i class="fa fa-external-link ml-2 text-sm"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl p-5 card-shadow card-hover">
+          <h3 class="text-lg font-semibold mb-3 flex items-center">
+            <i class="fa fa-book text-primary mr-2"></i>基础语法
+          </h3>
+          <p class="text-gray-600 text-sm mb-4">变量、数据类型、控制结构、函数等基础语言特性</p>
+          <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Grammar_and_types" target="_blank" class="text-primary text-sm font-medium hover:underline">
+            查看官方文档 <i class="fa fa-angle-right ml-1"></i>
+          </a>
+        </div>
+        
+        <div class="bg-white rounded-xl p-5 card-shadow card-hover">
+          <h3 class="text-lg font-semibold mb-3 flex items-center">
+            <i class="fa fa-cogs text-primary mr-2"></i>高级特性
+          </h3>
+          <p class="text-gray-600 text-sm mb-4">闭包、原型链、异步编程、模块化等高级概念</p>
+          <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Closures" target="_blank" class="text-primary text-sm font-medium hover:underline">
+            查看官方文档 <i class="fa fa-angle-right ml-1"></i>
+          </a>
+        </div>
+        
+        <div class="bg-white rounded-xl p-5 card-shadow card-hover">
+          <h3 class="text-lg font-semibold mb-3 flex items-center">
+            <i class="fa fa-cubes text-primary mr-2"></i>Web API
+          </h3>
+          <p class="text-gray-600 text-sm mb-4">DOM、BOM、Fetch、Web Storage等浏览器API</p>
+          <a href="https://developer.mozilla.org/zh-CN/docs/Web/API" target="_blank" class="text-primary text-sm font-medium hover:underline">
+            查看官方文档 <i class="fa fa-angle-right ml-1"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 框架部分 -->
+    <section id="frameworks" class="mb-20 scroll-mt-20">
+      <div class="flex items-center mb-8">
+        <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mr-4">
+          <i class="fa fa-th-large text-secondary text-2xl"></i>
+        </div>
+        <div>
+          <h2 class="text-[clamp(1.25rem,2vw,1.75rem)] font-bold text-dark">前端框架</h2>
+          <p class="text-gray-500">构建现代Web应用的主流框架</p>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl p-6 card-shadow card-hover">
+          <h3 class="text-xl font-semibold mb-4 flex items-center">
+            <i class="fa fa-react text-teal-500 mr-2"></i>React
+          </h3>
+          <p class="text-gray-600 mb-4">
+            React是由Facebook开发并维护的JavaScript库，用于构建用户界面。它采用组件化、声明式的方式来构建UI，使代码更易维护和测试。
+          </p>
+          <div class="flex flex-wrap mb-4">
+            <span class="tech-tag tech-tag-reactNative">组件化</span>
+            <span class="tech-tag tech-tag-reactNative">虚拟DOM</span>
+            <span class="tech-tag tech-tag-reactNative">单向数据流</span>
+            <span class="tech-tag tech-tag-reactNative">Hooks</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-dark mb-2">常用类库</h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="https://reactrouter.com/" target="_blank" class="hover:text-primary">React Router</a>
+                  <span class="text-xs text-gray-400"> - 路由管理</span>
+                </li>
+                <li>
+                  <a href="https://redux.js.org/" target="_blank" class="hover:text-primary">Redux</a>
+                  <span class="text-xs text-gray-400"> - 状态管理</span>
+                </li>
+                <li>
+                  <a href="https://react-query.tanstack.com/" target="_blank" class="hover:text-primary">React Query</a>
+                  <span class="text-xs text-gray-400"> - 数据获取</span>
+                </li>
+                <li>
+                  <a href="https://formik.org/" target="_blank" class="hover:text-primary">Formik</a>
+                  <span class="text-xs text-gray-400"> - 表单处理</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-dark mb-2">组件库</h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="https://mui.com/" target="_blank" class="hover:text-primary">Material UI</a>
+                </li>
+                <li>
+                  <a href="https://ant.design/" target="_blank" class="hover:text-primary">Ant Design</a>
+                </li>
+                <li>
+                  <a href="https://chakra-ui.com/" target="_blank" class="hover:text-primary">Chakra UI</a>
+                </li>
+                <li>
+                  <a href="https://react-bootstrap.github.io/" target="_blank" class="hover:text-primary">React Bootstrap</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-6">
+            <a href="https://react.dev/" target="_blank" class="inline-flex items-center text-teal-500 font-medium hover:underline">
+              <span>React官方文档</span>
+              <i class="fa fa-external-link ml-2 text-sm"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 card-shadow card-hover">
+          <h3 class="text-xl font-semibold mb-4 flex items-center">
+            <i class="fa fa-code-fork text-green-500 mr-2"></i>Vue.js
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Vue.js是一个用于构建用户界面的渐进式JavaScript框架，由尤雨溪创建。它采用自底向上增量式设计，使代码更易维护和测试。
+          </p>
+          <div class="flex flex-wrap mb-4">
+            <span class="tech-tag tech-tag-uni">响应式数据绑定</span>
+            <span class="tech-tag tech-tag-uni">组件化</span>
+            <span class="tech-tag tech-tag-uni">单文件组件</span>
+            <span class="tech-tag tech-tag-uni">Composition API</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-dark mb-2">常用类库</h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="https://router.vuejs.org/" target="_blank" class="hover:text-primary">Vue Router</a>
+                  <span class="text-xs text-gray-400"> - 路由管理</span>
+                </li>
+                <li>
+                  <a href="https://vuex.vuejs.org/" target="_blank" class="hover:text-primary">Vuex</a>
+                  <span class="text-xs text-gray-400"> - 状态管理</span>
+                </li>
+                <li>
+                  <a href="https://pinia.vuejs.org/" target="_blank" class="hover:text-primary">Pinia</a>
+                  <span class="text-xs text-gray-400"> - 新一代状态管理</span>
+                </li>
+                <li>
+                  <a href="https://vee-validate.logaretm.com/v4/" target="_blank" class="hover:text-primary">VeeValidate</a>
+                  <span class="text-xs text-gray-400"> - 表单验证</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-dark mb-2">组件库</h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="https://element-plus.gitee.io/zh-CN/" target="_blank" class="hover:text-primary">Element Plus</a>
+                </li>
+                <li>
+                  <a href="https://vant-ui.github.io/vant/#/zh-CN/" target="_blank" class="hover:text-primary">Vant</a>
+                </li>
+                <li>
+                  <a href="https://antdv.com/" target="_blank" class="hover:text-primary">Ant Design Vue</a>
+                </li>
+                <li>
+                  <a href="https://www.naiveui.com/zh-CN/os-theme" target="_blank" class="hover:text-primary">Naive UI</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-6">
+            <a href="https://cn.vuejs.org/" target="_blank" class="inline-flex items-center text-green-500 font-medium hover:underline">
+              <span>Vue.js官方文档</span>
+              <i class="fa fa-external-link ml-2 text-sm"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 card-shadow card-hover">
+          <h3 class="text-xl font-semibold mb-4 flex items-center">
+            <i class="fa fa-sitemap text-red-500 mr-2"></i>Angular
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Angular是一个由Google开发和维护的完整前端应用框架，用于构建大型、复杂的Web应用。它提供了全面的解决方案，包括路由、表单管理、状态管理等。
+          </p>
+          <div class="flex flex-wrap mb-4">
+            <span class="tech-tag tech-tag-alipay">TypeScript</span>
+            <span class="tech-tag tech-tag-alipay">模块化</span>
+            <span class="tech-tag tech-tag-alipay">双向数据绑定</span>
+            <span class="tech-tag tech-tag-alipay">依赖注入</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-dark mb-2">常用类库</h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="https://angular.io/guide/router" target="_blank" class="hover:text-primary">Angular Router</a>
+                  <span class="text-xs text-gray-400"> - 路由管理</span>
+                </li>
+                <li>
+                  <a href="https://ngrx.io/" target="_blank" class="hover:text-primary">NgRx</a>
+                  <span class="text-xs text-gray-400"> - 状态管理</span>
+                </li>
+                <li>
+                  <a href="https://angular.io/guide/forms-overview" target="_blank" class="hover:text-primary">Angular Forms</a>
+                  <span class="text-xs text-gray-400"> - 表单处理</span>
+                </li>
+                <li>
+                  <a href="https://rxjs.dev/" target="_blank" class="hover:text-primary">RxJS</a>
+                  <span class="text-xs text-gray-400"> - 响应式编程</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-dark mb-2">组件库</h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="https://material.angular.io/" target="_blank" class="hover:text-primary">Angular Material</a>
+                </li>
+                <li>
+                  <a href="https://primeng.org/" target="_blank" class="hover:text-primary">PrimeNG</a>
+                </li>
+                <li>
+                  <a href="https://www.ng-zorro-antd.com/home/zh" target="_blank" class="hover:text-primary">NG-ZORRO</a>
+                </li>
+                <li>
+                  <a href="https://ng-bootstrap.github.io/#/home" target="_blank" class="hover:text-primary">ng-bootstrap</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-6">
+            <a href="https://angular.cn/" target="_blank" class="inline-flex items-center text-red-500 font-medium hover:underline">
+              <span>Angular官方文档</span>
+              <i class="fa fa-external-link ml-2 text-sm"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 card-shadow card-hover">
+          <h3 class="text-xl font-semibold mb-4 flex items-center">
+            <i class="fa fa-snowflake-o text-preact mr-2"></i>其他框架
+          </h3>
+          <div class="grid grid-cols-1 gap-4">
+            <div>
+              <h4 class="font-medium text-dark mb-2 flex items-center">
+                <i class="fa fa-snowflake-o text-preact mr-2"></i>Svelte
+              </h4>
+              <p class="text-sm text-gray-600 mb-2">编译型前端框架，运行时体积小，性能优异。</p>
+              <div class="flex flex-wrap">
+                <span class="tech-tag tech-tag-svelte">编译型</span>
+                <span class="tech-tag tech-tag-svelte">零运行时</span>
+                <span class="tech-tag tech-tag-svelte">响应式</span>
+              </div>
+              <a href="https://svelte.dev/" target="_blank" class="text-sm text-preact hover:underline mt-2 inline-block">
+                官方文档 <i class="fa fa-external-link ml-1"></i>
+              </a>
+            </div>
+            
+            <div>
+              <h4 class="font-medium text-dark mb-2 flex items-center">
+                <i class="fa fa-diamond text-solid mr-2"></i>Solid
+              </h4>
+              <p class="text-sm text-gray-600 mb-2">基于React理念的高性能JavaScript库，编译时优化。</p>
+              <div class="flex flex-wrap">
+                <span class="tech-tag tech-tag-solid">声明式</span>
+                <span class="tech-tag tech-tag-solid">细粒度响应式</span>
+                <span class="tech-tag tech-tag-solid">编译优化</span>
+              </div>
+              <a href="https://www.solidjs.com/" target="_blank" class="text-sm text-solid hover:underline mt-2 inline-block">
+                官方文档 <i class="fa fa-external-link ml-1"></i>
+              </a>
+            </div>
+            
+            <div>
+              <h4 class="font-medium text-dark mb-2 flex items-center">
+                <i class="fa fa-bolt text-preact mr-2"></i>Preact
+              </h4>
+              <p class="text-sm text-gray-600 mb-2">轻量级React兼容库，体积只有3kb，API与React几乎完全一致。</p>
+              <div class="flex flex-wrap">
+                <span class="tech-tag tech-tag-preact">轻量级</span>
+                <span class="tech-tag tech-tag-preact">React兼容</span>
+                <span class="tech-tag tech-tag-preact">快速</span>
+              </div>
+              <a href="https://preactjs.com/" target="_blank" class="text-sm text-preact hover:underline mt-2 inline-block">
+                官方文档 <i class="fa fa-external-link ml-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 小程序部分 -->
+    <section id="miniapp" class="mb-20 scroll-mt-20">
+      <div class="flex items-center mb-8">
+        <div class="w-12 h-12 rounded-full bg-wechat/10 flex items-center justify-center mr-4">
+          <i class="fa fa-wechat text-wechat text-2xl"></i>
+        </div>
+        <div>
+          <h2 class="text-[clamp(1.25rem,2vw,1.75rem)] font-bold text-dark">小程序开发</h2>
+          <p class="text-gray-500">主流平台小程序开发框架</p>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl p-6 card-shadow card-hover">
+          <h3 class="text-xl font-semibold mb-4 flex items-center">
+            <i class="fa fa-wechat text-wechat mr-2"></i>微信小程序
+          </h3>
+          <p class="text-gray-600 mb-4">
+            微信推出的轻量级应用开发框架，无需下载安装即可使用，具有快速加载和良好的用户体验。
+          </p>
+          <div class="flex flex-wrap mb-4">
+            <span class="tech-tag tech-tag-wechat">组件化</span>
+            <span class="tech-tag tech-tag-wechat">简易路由</span>
+            <span class="tech-tag tech-tag-wechat">丰富API</span>
+            <span class="tech-tag tech-tag-wechat">庞大用户基础</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-dark mb-2">开发资源</h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/" target="_blank" class="hover:text-primary">框架文档</a>
+                </li>
+                <li>
+                  <a href="https://developers.weixin.qq.com/miniprogram/dev/api/" target="_blank" class="hover:text-primary">API文档</a>
+                </li>
+                <li>
+                  <a href="https://developers.weixin.qq.com/miniprogram/dev/component/" target="_blank" class="hover:text-primary">组件库</a>
+                </li>
+                <li>
+                  <a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/devtools.html" target="_blank" class="hover:text-primary">开发工具</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-dark mb-2">常用类库</h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="https://taro-docs.jd.com/taro/" target="_blank" class="hover:text-primary">Taro</a>
+                  <span class="text-xs text-gray-400"> - 多端统一开发</span>
+                </li>
+                <li>
+                  <a href="https://youzan.github.io/vant-weapp/#/intro" target="_blank" class="hover:text-primary">Vant Weapp</a>
+                  <span class="text-xs text-gray-400"> - 微信小程序UI组件库</span>
+                </li>
+                <li>
+                  <a href="https://github.com/Tencent/wepy" target="_blank" class="hover:text-primary">Wepy</a>
+                  <span class="text-xs text-gray-400"> - 小程序组件化开发框架</span>
+                </li>
+                <li>
+                  <a href="https://github.com/meili/minui" target="_blank" class="hover:text-primary">MinUI</a>
+                  <span class="text-xs text-gray-400"> - 微信小程序UI组件库</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-6">
+            <a href="https://developers.weixin.qq.com/miniprogram/dev/" target="_blank" class="inline-flex items-center text-wechat font-medium hover:underline">
+              <span>微信小程序开发文档</span>
+              <i class="fa fa-external-link ml-2 text-sm"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 card-shadow card-hover">
+          <h3 class="text-xl font-semibold mb-4 flex items-center">
+            <i class="fa fa-alipay text-alipay mr-2"></i>支付宝小程序
+          </h3>
+          <p class="text-gray-600 mb-4">
+            支付宝推出的轻量级应用开发框架，提供了丰富的支付和金融相关API，适合电商和金融类应用。
+          </p>
+          <div class="flex flex-wrap mb-4">
+            <span class="tech-tag tech-tag-alipay">组件化</span>
+            <span class="tech-tag tech-tag-alipay">路由系统</span>
+            <span class="tech-tag tech-tag-alipay">支付API</span>
+            <span class="tech-tag tech-tag-alipay">金融场景</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-dark mb-2">开发资源</h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="https://opendocs.alipay.com/mini/framework" target="_blank" class="hover:text-primary">框架文档</a>
+                </li>
+                <li>
+                  <a href="https://opendocs.alipay.com/mini/api" target="_blank" class="hover:text-primary">API文档</a>
+                </li>
+                <li>
+                  <a href="https://opendocs.alipay.com/mini/component" target="_blank" class="hover:text-primary">组件库</a>
+                </li>
+                <li>
+                  <a href="https://opendocs.alipay.com/mini/ide" target="_blank" class="hover:text-primary">开发工具</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-dark mb-2">常用类库</h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="https://taro-docs.jd.com/taro/" target="_blank" class="hover:text-primary">Taro</a>
+                  <span class="text-xs text-gray-400"> - 多端统一开发</span>
+                </li>
+                <li>
+                  <a href="https://docs.alipay.com/mini/developer/getting-started/introduce" target="_blank" class="hover:text-primary">Ant Design Mini</a>
+                  <span class="text-xs text-gray-400"> - 支付宝小程序UI组件库</span>
+                </li>
+                <li>
+                  <a href="https://github.com/ant-move/apollo" target="_blank" class="hover:text-primary">Apollo</a>
+                  <span class="text-xs text-gray-400"> - 支付宝小程序框架</span>
+                </li>
+                <li>
+                  <a href="https://github.com/meili/minui" target="_blank" class="hover:text-primary">MinUI</a>
+                  <span class="text-xs text-gray-400"> - 多端UI组件库</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-6">
+            <a href="https://opendocs.alipay.com/mini/developer" target="_blank" class="inline-flex items-center text-alipay font-medium hover:underline">
+              <span>支付宝小程序开发文档</span>
+              <i class="fa fa-external-link ml-2 text-sm"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 card-shadow card-hover">
+          <h3 class="text-xl font-semibold mb-4 flex items-center">
+            <i class="fa fa-qq text-blue-400 mr-2"></i>QQ小程序
+          </h3>
+          <p class="text-gray-600 mb-4">
+            QQ推出的轻量级应用开发框架，适合面向年轻用户群体的应用，提供了与QQ生态深度集成的能力。
+          </p>
+          <div class="flex flex-wrap mb-4">
+            <span class="tech-tag tech-tag-taro">组件化</span>
+            <span class="tech-tag tech-tag-taro">QQ生态</span>
+            <span class="tech-tag tech-tag-taro">年轻用户</span>
+            <span class="tech-tag tech-tag-taro">社交能力</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-dark mb-2">开发资源</h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="https://q.qq.com/wiki/develop/miniprogram/frame/" target="_blank" class="hover:text-primary">框架文档</a>
+                </li>
+                <li>
+                  <a href="https://q.qq.com/wiki/develop/miniprogram/api/" target="_blank" class="hover:text-primary">API文档</a>
+                </li>
+                <li>
+                  <a href="https://q.qq.com/wiki/develop/miniprogram/component/" target="_blank" class="hover:text-primary">组件库</a>
+                </li>
+                <li>
+                  <a href="https://q.qq.com/wiki/develop/miniprogram/tools/" target="_blank" class="hover:text-primary">开发工具</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-dark mb-2">常用类库</h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="https://taro-docs.jd.com/taro/" target="_blank" class="hover:text-primary">Taro</a>
+                  <span class="text-xs text-gray-400"> - 多端统一开发</span>
+                </li>
+                <li>
+                  <a href="https://q.qq.com/wiki/develop/miniprogram/guide/ui/index.html" target="_blank" class="hover:text-primary">QQ小程序UI组件</a>
+                </li>
+                <li>
+                  <a href="https://github.com/qq-miniprogram/qqmap-wx-jssdk" target="_blank" class="hover:text-primary">QQ地图SDK</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-6">
+            <a href="https://q.qq.com/wiki/develop/miniprogram/intro/" target="_blank" class="inline-flex items-center text-blue-400 font-medium hover:underline">
+              <span>QQ小程序开发文档</span>
+              <i class="fa fa-external-link ml-2 text-sm"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 card-shadow card-hover">
+          <h3 class="text-xl font-semibold mb-4 flex items-center">
+            <i class="fa fa-cubes text-uni mr-2"></i>跨平台解决方案
+          </h3>
+          <div class="grid grid-cols-1 gap-4">
+            <div>
+              <h4 class="font-medium text-dark mb-2 flex items-center">
+                <i class="fa fa-cube text-uni mr-2"></i>uni-app
+              </h4>
+              <p class="text-sm text-gray-600 mb-2">DCloud推出的跨平台开发框架，一套代码同时支持微信小程序、支付宝小程序、H5、App等多个平台。</p>
+              <div class="flex flex-wrap">
+                <span class="tech-tag tech-tag-uni">多端统一</span>
+                <span class="tech-tag tech-tag-uni">Vue语法</span>
+                <span class="tech-tag tech-tag-uni">丰富插件</span>
+              </div>
+              <a href="https://uniapp.dcloud.net.cn/" target="_blank" class="text-sm text-uni hover:underline mt-2 inline-block">
+                官方文档 <i class="fa fa-external-link ml-1"></i>
+              </a>
+            </div>
+            
+            <div>
+              <h4 class="font-medium text-dark mb-2 flex items-center">
+                <i class="fa fa-cubes text-taro mr-2"></i>Taro
+              </h4>
+              <p class="text-sm text-gray-600 mb-2">京东开发的多端统一开发框架，支持React语法，可同时开发小程序、H5、App等多个平台。</p>
+              <div class="flex flex-wrap">
+                <span class="tech-tag tech-tag-taro">多端统一</span>
+                <span class="tech-tag tech-tag-taro">React语法</span>
+                <span class="tech-tag tech-tag-taro">插件生态</span>
+              </div>
+              <a href="https://taro-docs.jd.com/taro/" target="_blank" class="text-sm text-taro hover:underline mt-2 inline-block">
+                官方文档 <i class="fa fa-external-link ml-1"></i>
+              </a>
+            </div>
+            
+            <div>
+              <h4 class="font-medium text-dark mb-2 flex items-center">
+                <i class="fa fa-code-fork text-flutter mr-2"></i>Flutter小程序
+              </h4>
+              <p class="text-sm text-gray-600 mb-2">Flutter推出的小程序解决方案，使用Dart语言开发，一套代码同时支持iOS、Android和小程序。</p>
+              <div class="flex flex-wrap">
+                <span class="tech-tag tech-tag-flutter">高性能</span>
+                <span class="tech-tag tech-tag-flutter">一套代码</span>
+                <span class="tech-tag tech-tag-flutter">原生体验</span>
+              </div>
+              <a href="https://flutter.cn/docs/development/platform-integration/webview" target="_blank" class="text-sm text-flutter hover:underline mt-2 inline-block">
+                官方文档 <i class="fa fa-external-link ml-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 移动应用开发部分 -->
+    <section id="mobile" class="mb-20 scroll-mt-20">
+      <div class="flex items-center mb-8">
+        <div class="w-12 h-12 rounded-full bg-reactNative/10 flex items-center justify-center mr-4">
+          <i class="fa fa-mobile text-reactNative text-2xl"></i>
+        </div>
+        <div>
+          <h2 class="text-[clamp(1.25rem,2vw,1.75rem)] font-bold text-dark">移动应用开发</h2>
+          <p class="text-gray-500">跨平台移动应用开发框架</p>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl p-6 card-shadow card-hover">
+          <h3 class="text-xl font-semibold mb-4 flex items-center">
+            <i class="fa fa-react text-reactNative mr-2"></i>React Native
+          </h3>
+          <p class="text-gray-600 mb-4">
+            React Native是Facebook开发的开源框架，用于构建原生移动应用。它使用React的概念和JavaScript语言，使开发者能够使用相同的代码库为iOS和Android平台创建应用。
+          </p>
+          <div class="flex flex-wrap mb-4">
+            <span class="tech-tag tech-tag-reactNative">原生性能</span>
+            <span class="tech-tag tech-tag-reactNative">组件化</span>
+            <span class="tech-tag tech-tag-reactNative">跨平台</span>
+            <span class="tech-tag tech-tag-reactNative">热更新</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-dark mb-2">常用类库</h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="https://reactnavigation.org/" target="_blank" class="hover:text-primary">React Navigation</a>
+                  <span class="text-xs text-gray-400"> - 路由和导航</span>
+                </li>
+                <li>
+                  <a href="https://redux.js.org/" target="_blank" class="hover:text-primary">Redux</a>
+                  <span class="text-xs text-gray-400"> - 状态管理</span>
+                </li>
+                <li>
+                  <a href="https://react-query.tanstack.com/" target="_blank" class="hover:text-primary">React Query</a>
+                  <span class="text-xs text-gray-400"> - 数据获取</span>
+                </li>
+                <li>
+                  <a href="https://github.com/react-native-async-storage/async-storage" target="_blank" class="hover:text-primary">Async Storage</a>
+                  <span class="text-xs text-gray-400"> - 本地存储</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-dark mb-2">UI组件库</h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="https://reactnativeelements.com/" target="_blank" class="hover:text-primary">React Native Elements</a>
+                </li>
+                <li>
+                  <a href="https://nativebase.io/" target="_blank" class="hover:text-primary">NativeBase</a>
+                </li>
+                <li>
+                  <a href="https://callstack.github.io/react-native-paper/" target="_blank" class="hover:text-primary">React Native Paper</a>
+                </li>
+                <li>
+                  <a href="https://reactnavigation.org/" target="_blank" class="hover:text-primary">React Navigation</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-6">
+            <a href="https://reactnative.dev/" target="_blank" class="inline-flex items-center text-reactNative font-medium hover:underline">
+              <span>React Native官方文档</span>
+              <i class="fa fa-external-link ml-2 text-sm"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 card-shadow card-hover">
+          <h3 class="text-xl font-semibold mb-4 flex items-center">
+            <i class="fa fa-code-fork text-flutter mr-2"></i>Flutter
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Flutter是Google开发的开源框架，用于构建移动应用、Web应用和桌面应用。它使用Dart语言，提供了丰富的UI组件和高性能渲染引擎。
+          </p>
+          <div class="flex flex-wrap mb-4">
+            <span class="tech-tag tech-tag-flutter">原生性能</span>
+            <span class="tech-tag tech-tag-flutter">一套代码</span>
+            <span class="tech-tag tech-tag-flutter">丰富组件</span>
+            <span class="tech-tag tech-tag-flutter">快速迭代</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-dark mb-2">常用类库</h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="https://pub.dev/packages/flutter_riverpod" target="_blank" class="hover:text-primary">Riverpod</a>
+                  <span class="text-xs text-gray-400"> - 状态管理</span>
+                </li>
+                <li>
+                  <a href="https://pub.dev/packages/http" target="_blank" class="hover:text-primary">http</a>
+                  <span class="text-xs text-gray-400"> - HTTP请求</span>
+                </li>
+                <li>
+                  <a href="https://pub.dev/packages/shared_preferences" target="_blank" class="hover:text-primary">shared_preferences</a>
+                  <span class="text-xs text-gray-400"> - 本地存储</span>
+                </li>
+                <li>
+                  <a href="https://pub.dev/packages/flutter_secure_storage" target="_blank" class="hover:text-primary">flutter_secure_storage</a>
+                  <span class="text-xs text-gray-400"> - 安全存储</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-dark mb-2">UI组件库</h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="https://flutter.dev/docs/development/ui/widgets/material" target="_blank" class="hover:text-primary">Material Components</a>
+                </li>
+                <li>
+                  <a href="https://flutter.dev/docs/development/ui/widgets/cupertino" target="_blank" class="hover:text-primary">Cupertino (iOS风格)</a>
+                </li>
+                <li>
+                  <a href="https://pub.dev/packages/firebase" target="_blank" class="hover:text-primary">Firebase</a>
+                  <span class="text-xs text-gray-400"> - 后端服务</span>
+                </li>
+                <li>
+                  <a href="https://pub.dev/packages/flutter_form_builder" target="_blank" class="hover:text-primary">flutter_form_builder</a>
+                  <span class="text-xs text-gray-400"> - 表单处理</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-6">
+            <a href="https://flutter.cn/" target="_blank" class="inline-flex items-center text-flutter font-medium hover:underline">
+              <span>Flutter官方文档</span>
+              <i class="fa fa-external-link ml-2 text-sm"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 card-shadow card-hover">
+          <h3 class="text-xl font-semibold mb-4 flex items-center">
+            <i class="fa fa-code text-ionic mr-2"></i>Ionic
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Ionic是一个开源的UI组件库和框架，用于构建高质量、跨平台的移动应用、Web应用和桌面应用。它基于Web技术（HTML、CSS、JavaScript），并提供了原生功能访问。
+          </p>
+          <div class="flex flex-wrap mb-4">
+            <span class="tech-tag tech-tag-ionic">Web技术</span>
+            <span class="tech-tag tech-tag-ionic">跨平台</span>
+            <span class="tech-tag tech-tag-ionic">原生功能</span>
+            <span class="tech-tag tech-tag-ionic">组件丰富</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-medium text-dark mb-2">常用类库</h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="https://ionicframework.com/docs/angular/overview" target="_blank" class="hover:text-primary">Ionic Angular</a>
+                  <span class="text-xs text-gray-400"> - Angular集成</span>
+                </li>
+                <li>
+                  <a href="https://ionicframework.com/docs/react/overview" target="_blank" class="hover:text-primary">Ionic React</a>
+                  <span class="text-xs text-gray-400"> - React集成</span>
+                </li>
+                <li>
+                  <a href="https://capacitorjs.com/" target="_blank" class="hover:text-primary">Capacitor</a>
+                  <span class="text-xs text-gray-400"> - 原生功能访问</span>
+                </li>
+                <li>
+                  <a href="https://ngrx.io/" target="_blank" class="hover:text-primary">NgRx</a>
+                  <span class="text-xs text-gray-400"> - 状态管理</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-medium text-dark mb-2">UI组件库</h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="https://ionicframework.com/docs/components" target="_blank" class="hover:text-primary">Ionic Components</a>
+                </li>
+                <li>
+                  <a href="https://stenciljs.com/" target="_blank" class="hover:text-primary">Stencil</a>
+                  <span class="text-xs text-gray-400"> - Web组件编译器</span>
+                </li>
+                <li>
+                  <a href="https://ionicframework.com/docs/angular/storage" target="_blank" class="hover:text-primary">Ionic Storage</a>
+                  <span class="text-xs text-gray-400"> - 数据存储</span>
+                </li>
+                <li>
+                  <a href="https://ionicframework.com/docs/native" target="_blank" class="hover:text-primary">Ionic Native</a>
+                  <span class="text-xs text-gray-400"> - 原生插件</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-6">
+            <a href="https://ionicframework.com/" target="_blank" class="inline-flex items-center text-ionic font-medium hover:underline">
+              <span>Ionic官方文档</span>
+              <i class="fa fa-external-link ml-2 text-sm"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 card-shadow card-hover">
+          <h3 class="text-xl font-semibold mb-4 flex items-center">
+            <i class="fa fa-cubes text-quasar mr-2"></i>其他移动开发框架
+          </h3>
+          <div class="grid grid-cols-1 gap-4">
+            <div>
+              <h4 class="font-medium text-dark mb-2 flex items-center">
+                <i class="fa fa-cube text-quasar mr-2"></i>Quasar Framework
+              </h4>
+              <p class="text-sm text-gray-600 mb-2">基于Vue.js的跨平台框架，一套代码可同时构建SPA、SSR、PWA、移动应用和桌面应用。</p>
+              <div class="flex flex-wrap">
+                <span class="tech-tag tech-tag-quasar">Vue.js</span>
+                <span class="tech-tag tech-tag-quasar">多端统一</span>
+                <span class="tech-tag tech-tag-quasar">组件丰富</span>
+              </div>
+              <a href="https://quasar.dev/" target="_blank" class="text-sm text-quasar hover:underline mt-2 inline-block">
+                官方文档 <i class="fa fa-external-link ml-1"></i>
+              </a>
+            </div>
+            
+            <div>
+              <h4 class="font-medium text-dark mb-2 flex items-center">
+                <i class="fa fa-code text-electron mr-2"></i>Electron
+              </h4>
+              <p class="text-sm text-gray-600 mb-2">使用Web技术构建跨平台桌面应用的框架，由GitHub开发，支持Windows、macOS和Linux。</p>
+              <div class="flex flex-wrap">
+                <span class="tech-tag tech-tag-electron">桌面应用</span>
+                <span class="tech-tag tech-tag-electron">Web技术</span>
+                <span class="tech-tag tech-tag-electron">跨平台</span>
+              </div>
+              <a href="https://www.electronjs.org/" target="_blank" class="text-sm text-electron hover:underline mt-2 inline-block">
+                官方文档 <i class="fa fa-external-link ml-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 工具库部分 -->
+    <section id="tools" class="mb-20 scroll-mt-20">
+      <div class="flex items-center mb-8">
+        <div class="w-12 h-12 rounded-full bg-util/10 flex items-center justify-center mr-4">
+          <i class="fa fa-wrench text-util text-2xl"></i>
+        </div>
+        <div>
+          <h2 class="text-[clamp(1.25rem,2vw,1.75rem)] font-bold text-dark">工具库与生态</h2>
+          <p class="text-gray-500">前端开发常用工具库和生态系统</p>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 构建工具 -->
+        <div class="bg-white rounded-xl p-6 card-shadow card-hover">
+          <h3 class="text-lg font-semibold mb-4 flex items-center">
+            <i class="fa fa-cogs text-build mr-2"></i>构建工具
+          </h3>
+          <ul class="space-y-3 text-sm text-gray-600">
+            <li>
+              <a href="https://vitejs.dev/" target="_blank" class="font-medium text-dark hover:text-primary">Vite</a>
+              <p class="text-xs text-gray-500">下一代前端构建工具，开发快速热更新</p>
+              <div class="flex flex-wrap mt-1">
+                <span class="tech-tag tech-tag-vite">快速热更新</span>
+                <span class="tech-tag tech-tag-vite">ESM</span>
+              </div>
+            </li>
+            <li>
+              <a href="https://webpack.js.org/" target="_blank" class="font-medium text-dark hover:text-primary">Webpack</a>
+              <p class="text-xs text-gray-500">模块打包器，功能强大的构建工具</p>
+              <div class="flex flex-wrap mt-1">
+                <span class="tech-tag tech-tag-webpack">模块打包</span>
+                <span class="tech-tag tech-tag-webpack">插件生态</span>
+              </div>
+            </li>
+            <li>
+              <a href="https://rollupjs.org/" target="_blank" class="font-medium text-dark hover:text-primary">Rollup</a>
+              <p class="text-xs text-gray-500">专注于ES模块的JavaScript模块打包器</p>
+              <div class="flex flex-wrap mt-1">
+                <span class="tech-tag tech-tag-rollup">ES模块</span>
+                <span class="tech-tag tech-tag-rollup">Tree Shaking</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 状态管理 -->
+        <div class="bg-white rounded-xl p-6 card-shadow card-hover">
+          <h3 class="text-lg font-semibold mb-4 flex items-center">
+            <i class="fa fa-database text-state mr-2"></i>状态管理
+          </h3>
+          <ul class="space-y-3 text-sm text-gray-600">
+            <li>
+              <a href="https://redux.js.org/" target="_blank" class="font-medium text-dark hover:text-primary">Redux</a>
+              <p class="text-xs text-gray-500">可预测的JavaScript状态容器</p>
+              <div class="flex flex-wrap mt-1">
+                <span class="tech-tag tech-tag-state">可预测</span>
+                <span class="tech-tag tech-tag-state">时间旅行</span>
+              </div>
+            </li>
+            <li>
+              <a href="https://zustand-demo.pmnd.rs/" target="_blank" class="font-medium text-dark hover:text-primary">Zustand</a>
+              <p class="text-xs text-gray-500">轻量级状态管理解决方案</p>
+              <div class="flex flex-wrap mt-1">
+                <span class="tech-tag tech-tag-state">轻量级</span>
+                <span class="tech-tag tech-tag-state">简单易用</span>
+              </div>
+            </li>
+            <li>
+              <a href="https://mobx.js.org/" target="_blank" class="font-medium text-dark hover:text-primary">MobX</a>
+              <p class="text-xs text-gray-500">通过函数响应式编程使状态管理变得简单</p>
+              <div class="flex flex-wrap mt-1">
+                <span class="tech-tag tech-tag-state">响应式</span>
+                <span class="tech-tag tech-tag-state">自动更新</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 路由管理 -->
+        <div class="bg-white rounded-xl p-6 card-shadow card-hover">
+          <h3 class="text-lg font-semibold mb-4 flex items-center">
+            <i class="fa fa-map-signs text-router mr-2"></i>路由管理
+          </h3>
+          <ul class="space-y-3 text-sm text-gray-600">
+            <li>
+              <a href="https://reactrouter.com/" target="_blank" class="font-medium text-dark hover:text-primary">React Router</a>
+              <p class="text-xs text-gray-500">React应用的声明式路由</p>
+              <div class="flex flex-wrap mt-1">
+                <span class="tech-tag tech-tag-router">声明式</span>
+                <span class="tech-tag tech-tag-router">嵌套路由</span>
+              </div>
+            </li>
+            <li>
+              <a href="https://router.vuejs.org/" target="_blank" class="font-medium text-dark hover:text-primary">Vue Router</a>
+              <p class="text-xs text-gray-500">Vue.js官方路由管理器</p>
+              <div class="flex flex-wrap mt-1">
+                <span class="tech-tag tech-tag-router">官方支持</span>
+                <span class="tech-tag tech-tag-router">导航守卫</span>
+              </div>
+            </li>
+            <li>
+              <a href="https://reach.tech/router/" target="_blank" class="font-medium text-dark hover:text-primary">Reach Router</a>
+              <p class="text-xs text-gray-500">可访问的React路由器（已合并到React Router）</p>
+              <div class="flex flex-wrap mt-1">
+                <span class="tech-tag tech-tag-router">可访问性</span>
+                <span class="tech-tag tech-tag-router">聚焦管理</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 测试工具 -->
+        <div class="bg-white rounded-xl p-6 card-shadow card-hover">
+          <h3 class="text-lg font-semibold mb-4 flex items-center">
+            <i class="fa fa-bug text-test mr-2"></i>测试工具
+          </h3>
+          <ul class="space-y-3 text-sm text-gray-600">
+            <li>
+              <a href="https://jestjs.io/" target="_blank" class="font-medium text-dark hover:text-primary">Jest</a>
+              <p class="text-xs text-gray-500">JavaScript测试框架</p>
+              <div class="flex flex-wrap mt-1">
+                <span class="tech-tag tech-tag-test">零配置</span>
+                <span class="tech-tag tech-tag-test">快照测试</span>
+              </div>
+            </li>
+            <li>
+              <a href="https://testing-library.com/" target="_blank" class="font-medium text-dark hover:text-primary">Testing Library</a>
+              <p class="text-xs text-gray-500">简单而完整的测试实用程序</p>
+              <div class="flex flex-wrap mt-1">
+                <span class="tech-tag tech-tag-test">用户中心</span>
+                <span class="tech-tag tech-tag-test">可维护</span>
+              </div>
+            </li>
+            <li>
+              <a href="https://www.cypress.io/" target="_blank" class="font-medium text-dark hover:text-primary">Cypress</a>
+              <p class="text-xs text-gray-500">端到端测试框架</p>
+              <div class="flex flex-wrap mt-1">
+                <span class="tech-tag tech-tag-test">E2E测试</span>
+                <span class="tech-tag tech-tag-test">实时重载</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- CSS工具 -->
+        <div class="bg-white rounded-xl p-6 card-shadow card-hover">
+          <h3 class="text-lg font-semibold mb-4 flex items-center">
+            <i class="fa fa-paint-brush text-css mr-2"></i>CSS工具
+          </h3>
+          <ul class="space-y-3 text-sm text-gray-600">
+            <li>
+              <a href="https://tailwindcss.com/" target="_blank" class="font-medium text-dark hover:text-primary">Tailwind CSS</a>
+              <p class="text-xs text-gray-500">实用优先的CSS框架</p>
+              <div class="flex flex-wrap mt-1">
+                <span class="tech-tag tech-tag-css">实用优先</span>
+                <span class="tech-tag tech-tag-css">原子化</span>
+              </div>
+            </li>
+            <li>
+              <a href="https://sass-lang.com/" target="_blank" class="font-medium text-dark hover:text-primary">Sass</a>
+              <p class="text-xs text-gray-500">成熟、稳定、强大的CSS扩展语言</p>
+              <div class="flex flex-wrap mt-1">
+                <span class="tech-tag tech-tag-css">变量</span>
+                <span class="tech-tag tech-tag-css">嵌套</span>
+              </div>
+            </li>
+            <li>
+              <a href="https://postcss.org/" target="_blank" class="font-medium text-dark hover:text-primary">PostCSS</a>
+              <p class="text-xs text-gray-500">用JavaScript转换CSS的工具</p>
+              <div class="flex flex-wrap mt-1">
+                <span class="tech-tag tech-tag-css">插件生态</span>
+                <span class="tech-tag tech-tag-css">现代化</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 工具库 -->
+        <div class="bg-white rounded-xl p-6 card-shadow card-hover">
+          <h3 class="text-lg font-semibold mb-4 flex items-center">
+            <i class="fa fa-toolbox text-util mr-2"></i>实用工具库
+          </h3>
+          <ul class="space-y-3 text-sm text-gray-600">
+            <li>
+              <a href="https://lodash.com/" target="_blank" class="font-medium text-dark hover:text-primary">Lodash</a>
+              <p class="text-xs text-gray-500">现代JavaScript实用程序库</p>
+              <div class="flex flex-wrap mt-1">
+                <span class="tech-tag tech-tag-util">函数式</span>
+                <span class="tech-tag tech-tag-util">模块化</span>
+              </div>
+            </li>
+            <li>
+              <a href="https://date-fns.org/" target="_blank" class="font-medium text-dark hover:text-primary">date-fns</a>
+              <p class="text-xs text-gray-500">现代JavaScript日期实用程序库</p>
+              <div class="flex flex-wrap mt-1">
+                <span class="tech-tag tech-tag-util">日期处理</span>
+                <span class="tech-tag tech-tag-util">国际化</span>
+              </div>
+            </li>
+            <li>
+              <a href="https://axios-http.com/" target="_blank" class="font-medium text-dark hover:text-primary">Axios</a>
+              <p class="text-xs text-gray-500">基于Promise的HTTP客户端</p>
+              <div class="flex flex-wrap mt-1">
+                <span class="tech-tag tech-tag-http">Promise</span>
+                <span class="tech-tag tech-tag-http">拦截器</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 资源部分 -->
+    <section id="resources" class="mb-20 scroll-mt-20">
+      <div class="flex items-center mb-8">
+        <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mr-4">
+          <i class="fa fa-book text-accent text-2xl"></i>
+        </div>
+        <div>
+          <h2 class="text-[clamp(1.25rem,2vw,1.75rem)] font-bold text-dark">学习资源</h2>
+          <p class="text-gray-500">权威文档和学习资源集合</p>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 官方文档 -->
+        <div class="bg-white rounded-xl p-6 card-shadow card-hover">
+          <h3 class="text-lg font-semibold mb-4 flex items-center">
+            <i class="fa fa-file-text text-primary mr-2"></i>官方文档
+          </h3>
+          <ul class="space-y-3 text-sm text-gray-600">
+            <li>
+              <a href="https://developer.mozilla.org/zh-CN/" target="_blank" class="font-medium text-dark hover:text-primary">MDN Web Docs</a>
+              <p class="text-xs text-gray-500">Web技术权威文档</p>
+            </li>
+            <li>
+              <a href="https://www.w3.org/" target="_blank" class="font-medium text-dark hover:text-primary">W3C</a>
+              <p class="text-xs text-gray-500">Web标准制定组织</p>
+            </li>
+            <li>
+              <a href="https://tc39.es/" target="_blank" class="font-medium text-dark hover:text-primary">TC39</a>
+              <p class="text-xs text-gray-500">ECMAScript标准委员会</p>
+            </li>
+            <li>
+              <a href="https://caniuse.com/" target="_blank" class="font-medium text-dark hover:text-primary">Can I Use</a>
+              <p class="text-xs text-gray-500">浏览器兼容性查询</p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 学习平台 -->
+        <div class="bg-white rounded-xl p-6 card-shadow card-hover">
+          <h3 class="text-lg font-semibold mb-4 flex items-center">
+            <i class="fa fa-graduation-cap text-secondary mr-2"></i>学习平台
+          </h3>
+          <ul class="space-y-3 text-sm text-gray-600">
+            <li>
+              <a href="https://freecodecamp.org/" target="_blank" class="font-medium text-dark hover:text-primary">freeCodeCamp</a>
+              <p class="text-xs text-gray-500">免费编程学习平台</p>
+            </li>
+            <li>
+              <a href="https://javascript.info/" target="_blank" class="font-medium text-dark hover:text-primary">JavaScript.info</a>
+              <p class="text-xs text-gray-500">现代JavaScript教程</p>
+            </li>
+            <li>
+              <a href="https://egghead.io/" target="_blank" class="font-medium text-dark hover:text-primary">Egghead</a>
+              <p class="text-xs text-gray-500">前端技术视频教程</p>
+            </li>
+            <li>
+              <a href="https://frontendmasters.com/" target="_blank" class="font-medium text-dark hover:text-primary">Frontend Masters</a>
+              <p class="text-xs text-gray-500">前端专业课程平台</p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 工具网站 -->
+        <div class="bg-white rounded-xl p-6 card-shadow card-hover">
+          <h3 class="text-lg font-semibold mb-4 flex items-center">
+            <i class="fa fa-cog text-util mr-2"></i>开发工具
+          </h3>
+          <ul class="space-y-3 text-sm text-gray-600">
+            <li>
+              <a href="https://codepen.io/" target="_blank" class="font-medium text-dark hover:text-primary">CodePen</a>
+              <p class="text-xs text-gray-500">在线代码编辑器</p>
+            </li>
+            <li>
+              <a href="https://codesandbox.io/" target="_blank" class="font-medium text-dark hover:text-primary">CodeSandbox</a>
+              <p class="text-xs text-gray-500">在线开发环境</p>
+            </li>
+            <li>
+              <a href="https://github.com/" target="_blank" class="font-medium text-dark hover:text-primary">GitHub</a>
+              <p class="text-xs text-gray-500">代码托管和协作平台</p>
+            </li>
+            <li>
+              <a href="https://npmjs.com/" target="_blank" class="font-medium text-dark hover:text-primary">npm</a>
+              <p class="text-xs text-gray-500">Node.js包管理器</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="bg-dark text-white py-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-2">
+          <div class="flex items-center mb-4">
+            <i class="fa fa-code text-primary text-2xl mr-2"></i>
+            <span class="font-bold text-xl">前端知识库</span>
+          </div>
+          <p class="text-gray-300 mb-4 text-balance">
+            专为AI爬取而设计的前端技术知识总结网站，提供全面的前端技术文档集合，帮助开发者快速掌握核心概念并找到官方资源。
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-300 hover:text-primary transition-colors">
+              <i class="fa fa-github text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-300 hover:text-primary transition-colors">
+              <i class="fa fa-twitter text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-300 hover:text-primary transition-colors">
+              <i class="fa fa-linkedin text-xl"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="font-semibold text-lg mb-4">快速导航</h3>
+          <ul class="space-y-2">
+            <li><a href="#javascript" class="text-gray-300 hover:text-primary transition-colors">JavaScript</a></li>
+            <li><a href="#frameworks" class="text-gray-300 hover:text-primary transition-colors">前端框架</a></li>
+            <li><a href="#miniapp" class="text-gray-300 hover:text-primary transition-colors">小程序</a></li>
+            <li><a href="#mobile" class="text-gray-300 hover:text-primary transition-colors">移动应用</a></li>
+            <li><a href="#tools" class="text-gray-300 hover:text-primary transition-colors">工具库</a></li>
+            <li><a href="#resources" class="text-gray-300 hover:text-primary transition-colors">学习资源</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="font-semibold text-lg mb-4">联系信息</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li class="flex items-center">
+              <i class="fa fa-envelope mr-2"></i>
+              <span>contact@example.com</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa fa-globe mr-2"></i>
+              <span>www.example.com</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa fa-clock-o mr-2"></i>
+              <span>最后更新：2025年7月</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+        <p class="text-gray-300">
+          © 2025 前端知识库. 本网站专为AI爬取而设计，提供结构化的前端技术知识总结。
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // 移动端菜单切换
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // 添加滚动效果
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 100) {
+        header.classList.add('shadow-md');
+      } else {
+        header.classList.remove('shadow-md');
+      }
+    });
+
+    // 检测视口中的元素并添加动画
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // 观察所有卡片元素
+    document.querySelectorAll('.card-hover').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(card);
+    });
+
+    // 搜索功能（可选）
+    function searchContent(query) {
+      const sections = document.querySelectorAll('section[id]');
+      const results = [];
+      
+      sections.forEach(section => {
+        const text = section.textContent.toLowerCase();
+        if (text.includes(query.toLowerCase())) {
+          results.push({
+            id: section.id,
+            title: section.querySelector('h2').textContent,
+            section: section
+          });
+        }
+      });
+      
+      return results;
+    }
+
+    // 返回顶部按钮
+    const backToTop = document.createElement('div');
+    backToTop.innerHTML = '<i class="fa fa-arrow-up"></i>';
+    backToTop.className = 'fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg cursor-pointer transition-all duration-300 hover:bg-primary/90 hover:shadow-xl opacity-0 pointer-events-none z-50';
+    backToTop.id = 'back-to-top';
+    document.body.appendChild(backToTop);
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTop.style.opacity = '1';
+        backToTop.style.pointerEvents = 'auto';
+      } else {
+        backToTop.style.opacity = '0';
+        backToTop.style.pointerEvents = 'none';
+      }
+    });
+
+    // 加载动画
+    document.addEventListener('DOMContentLoaded', function() {
+      // 页面加载完成后的初始化
+      console.log('前端知识库已加载完成');
+      
+      // 添加键盘导航支持
+      document.addEventListener('keydown', function(e) {
+        // Ctrl/Cmd + K 快速搜索（如果实现了搜索功能）
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          // 这里可以触发搜索功能
+          console.log('搜索快捷键被触发');
+        }
+      });
+      
+      // 性能监控（可选）
+      if ('performance' in window) {
+        window.addEventListener('load', function() {
+          setTimeout(function() {
+            const perfData = performance.getEntriesByType('navigation')[0];
+            console.log('页面加载时间:', perfData.loadEventEnd - perfData.fetchStart + 'ms');
+          }, 0);
+        });
+      }
+    });
+  </script>
+
+  <!-- SEO和结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "前端技术知识总结",
+    "description": "一个便于AI爬取的前端技术知识总结网站，包含JavaScript、React、Vue、Angular、微信小程序、支付宝小程序等核心前端技术文档的简明总结和官方链接。",
+    "url": "https://example.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://example.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "前端知识库团队"
+    },
+    "dateModified": "2025-07-02",
+    "inLanguage": "zh-CN"
+  }
+  </script>
+</body>
+</html></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">林泉幽梦</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/posts/0.html">http://example.com/posts/0.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">林泉幽梦</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/JavaScript/">JavaScript</a><a class="post-meta__tags" href="/tags/React/">React</a><a class="post-meta__tags" href="/tags/Vue/">Vue</a><a class="post-meta__tags" href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">小程序</a><a class="post-meta__tags" href="/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/">移动开发</a><a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/">前端框架</a></div><div class="post-share"><div class="social-share" data-image="https://lys-1312655971.cos.ap-guangzhou.myqcloud.com/blog-images/top-image/白厄.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/posts/e4f83d21.html" title="Set和Map集合"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">Set和Map集合</div></div><div class="info-2"><div class="info-item-1">Set和Map集合ES6（ECMAScript 2015）引入了两种新的数据结构：Set和Map。这两种集合类型填补了JavaScript在数据存储方面的空白，提供了比数组和对象更专业的集合操作能力。本文将详细介绍Set和Map的使用方法及其应用场景。 Set集合Set是一种存储唯一值的集合，类似于数学中的集合概念。Set中的元素不会重复，可以是任何类型（原始值或对象引用）。 基本用法1234567891011121314151617181920212223// 创建一个空Setconst set = new Set();// 添加值set.add(1);set.add(2);set.add(3);set.add(1); // 重复值不会被添加console.log(set); // Set(3) &#123; 1, 2, 3 &#125;console.log(set.size); // 3// 检查值是否存在console.log(set.has(1)); // trueconsole.log(set.has(4)); // false//...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/posts/b7d2e143.html" title="数组扩展"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-04</div><div class="info-item-2">数组扩展</div></div><div class="info-2"><div class="info-item-1">数组扩展ES6（ECMAScript 2015）及后续版本为JavaScript的数组引入了许多新方法和特性，这些扩展大大增强了数组的操作能力，使得开发者可以更加方便地处理数组数据。本文将详细介绍这些新特性及其应用。 创建数组的新方式Array.of()Array.of()方法创建一个具有可变数量参数的新数组实例，而不考虑参数的数量或类型： 1234567// 解决了构造函数Array的不一致性问题new Array(3);      // [empty × 3] (长度为3的空数组)new Array(1, 2, 3); // [1, 2, 3]// Array.of 总是创建包含所有参数的数组Array.of(3);      // [3]Array.of(1, 2, 3); // [1, 2, 3]  Array.from()Array.from()方法从类数组对象或可迭代对象创建一个新的数组实例： 123456789101112// 从类数组对象创建数组const arrayLike = &#123; 0: &#x27;a&#x27;, 1:...</div></div></div></a><a class="pagination-related" href="/posts/b9c7d432.html" title="类与面向对象编程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-04</div><div class="info-item-2">类与面向对象编程</div></div><div class="info-2"><div class="info-item-1">类与面向对象编程ES6（ECMAScript 2015）引入的类（Class）是JavaScript实现面向对象编程的一种新方式。在ES6之前，JavaScript通过原型（prototype）和构造函数来实现类似的功能，但语法不够直观，且容易出错。ES6的类语法提供了更清晰、更符合直觉的方式来创建对象和处理继承关系。 类的基本语法类的声明使用class关键字，其中可以包含构造函数、实例方法、getter&#x2F;setter方法和静态方法： 123456789101112131415161718192021222324252627class Person &#123;  // 构造方法 - 创建实例时自动调用  constructor(name, age) &#123;    this.name = name;    this.age = age;  &#125;  // 实例方法  sayHello() &#123;    console.log(`你好，我是$&#123;this.name&#125;，今年$&#123;this.age&#125;岁`); ...</div></div></div></a><a class="pagination-related" href="/posts/f7b9d235.html" title="箭头函数"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-04</div><div class="info-item-2">箭头函数</div></div><div class="info-2"><div class="info-item-1">箭头函数ES6（ECMAScript 2015）引入了箭头函数，这是一种更简洁的函数声明语法，同时也具有一些与传统函数不同的特性。箭头函数不仅仅是一种语法糖，它在处理this绑定方面有着本质上的不同，为解决JavaScript中常见的问题提供了优雅的解决方案。 基本语法箭头函数的基本语法比传统函数更加简洁： 123456789// 传统函数const traditional = function(x) &#123;  return x * 2;&#125;;// 箭头函数const arrow = (x) =&gt; &#123;  return x * 2;&#125;;  当函数只有一个参数时，可以省略参数周围的括号： 123const arrowSimple = x =&gt; &#123;  return x * 2;&#125;;  如果函数体只包含一个返回语句，可以省略大括号和return关键字： 1const arrowSimplest = x =&gt; x *...</div></div></div></a><a class="pagination-related" href="/posts/a8c9e456.html" title="解构赋值"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-04</div><div class="info-item-2">解构赋值</div></div><div class="info-2"><div class="info-item-1">解构赋值解构赋值是ES6（ECMAScript 2015）引入的一种特殊语法，它允许我们从数组或对象中提取值，并以简洁的方式将它们赋给变量。这个特性大大增强了JavaScript的表达能力，让代码更加简洁易读。 数组解构数组解构允许我们从数组中提取值并赋给变量。基本语法如下： 1const [变量1, 变量2, ...] = 数组;  基本用法12345const array = [1, 2, 3, 4, 5];// 基本用法const [a, b, c] = array;console.log(a, b, c); // 1 2 3  跳过某些元素如果只想提取数组中的特定位置的元素，可以使用逗号来跳过中间的元素： 12345const array = [1, 2, 3, 4, 5];// 跳过第二个元素const [first, , third] = array;console.log(first, third); // 1 3  使用剩余运算符可以使用...剩余运算符来获取剩余的所有元素： 12345const array = [1, 2, 3, 4, 5];//...</div></div></div></a><a class="pagination-related" href="/posts/d5f9e732.html" title="Iterator与Generator"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-04</div><div class="info-item-2">Iterator与Generator</div></div><div class="info-2"><div class="info-item-1">Iterator与GeneratorES6（ECMAScript 2015）引入了两个强大的概念：迭代器（Iterator）和生成器（Generator）。这两个特性为JavaScript中的集合遍历和异步编程带来了革命性的变化。本文将深入探讨这两个概念的原理、语法和应用场景。 迭代器（Iterator）迭代器的概念迭代器是一种特殊对象，它提供了一种标准的方式来遍历数据集合。在JavaScript中，迭代器对象必须实现next()方法，该方法返回一个包含value和done两个属性的对象：  value：当前迭代位置的值 done：一个布尔值，表示迭代是否结束  创建简单的迭代器以下是手动实现一个简单数组迭代器的例子： 1234567891011121314151617181920212223function createArrayIterator(array) &#123;  let index = 0;    return &#123;    next() &#123;      if (index &lt; array.length) &#123;       ...</div></div></div></a><a class="pagination-related" href="/posts/e5a8c321.html" title="let和const变量声明"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-04</div><div class="info-item-2">let和const变量声明</div></div><div class="info-2"><div class="info-item-1">let和const变量声明在ES6（ECMAScript 2015）之前，JavaScript中只有使用var关键字声明变量的方式。ES6引入了let和const两种新的变量声明方式，它们解决了var声明变量的一些缺点，为开发者提供了更灵活、更安全的变量声明选择。 块级作用域let和const最重要的特性是引入了块级作用域，这与var的函数作用域有很大不同。 123456&#123;  let a = 10;  var b = 20;&#125;console.log(b); // 20console.log(a); // ReferenceError: a is not defined  使用let声明的变量只在其所在的代码块内有效，而var声明的变量在整个函数体内都有效。这个特性使得我们可以更精确地控制变量的可见范围，避免了意外的变量污染。 不存在变量提升var声明的变量存在”变量提升”现象，即变量可以在声明之前使用，值为undefined。而let和const声明的变量不存在变量提升，必须先声明后使用。 12345console.log(a); //...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="artalk-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://lys-1312655971.cos.ap-guangzhou.myqcloud.com/blog-images%2Favatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">林泉幽梦</div><div class="author-info-description">先相信你自己，然后别人才会相信你</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/LiYuanSen0912"><i class="fab fa-github"></i><span>关注我</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/liyuansen0912" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:2132793141@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">
+          前端技术知识总结
+        </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">关于这个网站</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.1.</span> <span class="toc-text">技术总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.2.</span> <span class="toc-text">官方链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.3.</span> <span class="toc-text">结构化内容</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript"><span class="toc-number">1.2.</span> <span class="toc-text">JavaScript</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#javascript"><span class="toc-number">1.2.1.</span> <span class="toc-text">
+            核心概念
+          </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#javascript"><span class="toc-number">1.2.2.</span> <span class="toc-text">
+            关键特性
+          </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#javascript"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">ES6+ 特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#javascript"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">DOM操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#javascript"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">事件处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#javascript"><span class="toc-number">1.2.2.4.</span> <span class="toc-text">AJAX&#x2F;Fetch API</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#javascript"><span class="toc-number">1.2.3.</span> <span class="toc-text">
+            基础语法
+          </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#javascript"><span class="toc-number">1.2.4.</span> <span class="toc-text">
+            高级特性
+          </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#javascript"><span class="toc-number">1.2.5.</span> <span class="toc-text">
+            Web API
+          </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#frameworks"><span class="toc-number">1.3.</span> <span class="toc-text">前端框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#frameworks"><span class="toc-number">1.3.1.</span> <span class="toc-text">
+            React
+          </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#frameworks"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">常用类库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#frameworks"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">组件库</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#frameworks"><span class="toc-number">1.3.2.</span> <span class="toc-text">
+            Vue.js
+          </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#frameworks"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">常用类库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#frameworks"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">组件库</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#frameworks"><span class="toc-number">1.3.3.</span> <span class="toc-text">
+            Angular
+          </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#frameworks"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">常用类库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#frameworks"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">组件库</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#frameworks"><span class="toc-number">1.3.4.</span> <span class="toc-text">
+            其他框架
+          </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#frameworks"><span class="toc-number">1.3.4.1.</span> <span class="toc-text">
+                Svelte
+              </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#frameworks"><span class="toc-number">1.3.4.2.</span> <span class="toc-text">
+                Solid
+              </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#frameworks"><span class="toc-number">1.3.4.3.</span> <span class="toc-text">
+                Preact
+              </span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#miniapp"><span class="toc-number">1.4.</span> <span class="toc-text">小程序开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#miniapp"><span class="toc-number">1.4.1.</span> <span class="toc-text">
+            微信小程序
+          </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#miniapp"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">开发资源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#miniapp"><span class="toc-number">1.4.1.2.</span> <span class="toc-text">常用类库</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#miniapp"><span class="toc-number">1.4.2.</span> <span class="toc-text">
+            支付宝小程序
+          </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#miniapp"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">开发资源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#miniapp"><span class="toc-number">1.4.2.2.</span> <span class="toc-text">常用类库</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#miniapp"><span class="toc-number">1.4.3.</span> <span class="toc-text">
+            QQ小程序
+          </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#miniapp"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">开发资源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#miniapp"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">常用类库</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#miniapp"><span class="toc-number">1.4.4.</span> <span class="toc-text">
+            跨平台解决方案
+          </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#miniapp"><span class="toc-number">1.4.4.1.</span> <span class="toc-text">
+                uni-app
+              </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#miniapp"><span class="toc-number">1.4.4.2.</span> <span class="toc-text">
+                Taro
+              </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#miniapp"><span class="toc-number">1.4.4.3.</span> <span class="toc-text">
+                Flutter小程序
+              </span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mobile"><span class="toc-number">1.5.</span> <span class="toc-text">移动应用开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#mobile"><span class="toc-number">1.5.1.</span> <span class="toc-text">
+            React Native
+          </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#mobile"><span class="toc-number">1.5.1.1.</span> <span class="toc-text">常用类库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mobile"><span class="toc-number">1.5.1.2.</span> <span class="toc-text">UI组件库</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mobile"><span class="toc-number">1.5.2.</span> <span class="toc-text">
+            Flutter
+          </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#mobile"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">常用类库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mobile"><span class="toc-number">1.5.2.2.</span> <span class="toc-text">UI组件库</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mobile"><span class="toc-number">1.5.3.</span> <span class="toc-text">
+            Ionic
+          </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#mobile"><span class="toc-number">1.5.3.1.</span> <span class="toc-text">常用类库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mobile"><span class="toc-number">1.5.3.2.</span> <span class="toc-text">UI组件库</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mobile"><span class="toc-number">1.5.4.</span> <span class="toc-text">
+            其他移动开发框架
+          </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#mobile"><span class="toc-number">1.5.4.1.</span> <span class="toc-text">
+                Quasar Framework
+              </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mobile"><span class="toc-number">1.5.4.2.</span> <span class="toc-text">
+                Electron
+              </span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tools"><span class="toc-number">1.6.</span> <span class="toc-text">工具库与生态</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#tools"><span class="toc-number">1.6.1.</span> <span class="toc-text">
+            构建工具
+          </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tools"><span class="toc-number">1.6.2.</span> <span class="toc-text">
+            状态管理
+          </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tools"><span class="toc-number">1.6.3.</span> <span class="toc-text">
+            路由管理
+          </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tools"><span class="toc-number">1.6.4.</span> <span class="toc-text">
+            测试工具
+          </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tools"><span class="toc-number">1.6.5.</span> <span class="toc-text">
+            CSS工具
+          </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tools"><span class="toc-number">1.6.6.</span> <span class="toc-text">
+            实用工具库
+          </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#resources"><span class="toc-number">1.7.</span> <span class="toc-text">学习资源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#resources"><span class="toc-number">1.7.1.</span> <span class="toc-text">
+            官方文档
+          </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#resources"><span class="toc-number">1.7.2.</span> <span class="toc-text">
+            学习平台
+          </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#resources"><span class="toc-number">1.7.3.</span> <span class="toc-text">
+            开发工具
+          </span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.7.4.</span> <span class="toc-text">快速导航</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.7.5.</span> <span class="toc-text">联系信息</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/0.html" title="前端技术知识总结"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://lys-1312655971.cos.ap-guangzhou.myqcloud.com/blog-images/top-image/白厄.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端技术知识总结"/></a><div class="content"><a class="title" href="/posts/0.html" title="前端技术知识总结">前端技术知识总结</a><time datetime="2025-07-02T14:38:33.000Z" title="发表于 2025-07-02 22:38:33">2025-07-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/b7d2e143.html" title="数组扩展">数组扩展</a><time datetime="2025-05-04T15:00:00.000Z" title="发表于 2025-05-04 23:00:00">2025-05-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/b9c7d432.html" title="类与面向对象编程">类与面向对象编程</a><time datetime="2025-05-04T15:00:00.000Z" title="发表于 2025-05-04 23:00:00">2025-05-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/f7b9d235.html" title="箭头函数">箭头函数</a><time datetime="2025-05-04T15:00:00.000Z" title="发表于 2025-05-04 23:00:00">2025-05-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/a8c9e456.html" title="解构赋值">解构赋值</a><time datetime="2025-05-04T15:00:00.000Z" title="发表于 2025-05-04 23:00:00">2025-05-04</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://lys-1312655971.cos.ap-guangzhou.myqcloud.com/blog-images%2Ftop-image%2F%E5%90%8A%E5%BA%8A-%E5%AE%89%E9%80%B8-%E6%8F%92%E7%94%BB.png);"><div id="footer-wrap"><div class="copyright">&copy;2025 By 林泉幽梦</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  let artalkItem = null
+  const option = null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+
+  const destroyArtalk = () => {
+    if (artalkItem) {
+      artalkItem.destroy()
+      artalkItem = null
+    }
+  }
+
+  const artalkChangeMode = theme => artalkItem && artalkItem.setDarkMode(theme === 'dark')
+
+  const initArtalk = (el = document, pageKey = location.pathname) => {
+    artalkItem = Artalk.init({
+      el: el.querySelector('#artalk-wrap'),
+      server: 'http://121.37.251.249:8080/',
+      site: '林泉幽梦',
+      darkMode: document.documentElement.getAttribute('data-theme') === 'dark',
+      ...option,
+      pageKey: isShuoshuo ? pageKey : (option && option.pageKey) || pageKey
+    })
+
+    if (GLOBAL_CONFIG.lightbox === 'null') return
+    artalkItem.on('list-loaded', () => {
+      artalkItem.ctx.get('list').getCommentNodes().forEach(comment => {
+        const $content = comment.getRender().$content
+        btf.loadLightbox($content.querySelectorAll('img:not([atk-emoticon])'))
+      })
+    })
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyArtalk = () => {
+        destroyArtalk()
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    btf.addGlobalFn('pjaxSendOnce', destroyArtalk, 'destroyArtalk')
+    btf.addGlobalFn('themeChange', artalkChangeMode, 'artalk')
+  }
+
+  const loadArtalk = async (el, pageKey) => {
+    if (typeof Artalk === 'object') initArtalk(el, pageKey)
+    else {
+      await btf.getCSS('https://cdn.jsdelivr.net/npm/artalk/dist/Artalk.min.css')
+      await btf.getScript('https://cdn.jsdelivr.net/npm/artalk/dist/Artalk.min.js')
+      initArtalk(el, pageKey)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Artalk' === 'Artalk'
+      ? window.shuoshuoComment = { loadComment: loadArtalk }
+      : window.loadOtherComment = loadArtalk
+    return
+  }
+
+  if ('Artalk' === 'Artalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('artalk-wrap'), loadArtalk)
+    else setTimeout(loadArtalk, 100)
+  } else {
+    window.loadOtherComment = loadArtalk
+  }
+})()</script></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="初音未来,三玖,六花,亚丝娜,薇尔莉特,纱雾,艾拉,小埋,加藤恵,爱蜜莉雅,蕾姆,远坂凛,saber,间桐樱,时崎狂三,鸢一折纸,十香,雪乃,我妻由乃,白井黑子,灵梦,椎名真白,樱岛麻衣,牧濑红莉栖,c.c,2,春日野穹,立华奏,栗山未来,千反田爱瑠,宫园薰,楪祈,古河渚,秋山澪,平泽唯,凉宫春日,绫波丽,御坂美琴,喜多川海梦,四宫辉夜,明日香" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":180,"height":360,"hOffset":0,"vOffset":-100},"mobile":{"show":true},"react":{"opacity":0.85},"log":false});</script></body></html>
