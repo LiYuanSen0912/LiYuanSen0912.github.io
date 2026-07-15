@@ -4,4 +4,6 @@ db.json
 .deploy_git/
 .github-deploy-key
 .github-deploy-key.pub
+.github-deploy-key-elevated
+.github-deploy-key-elevated.pub
 .github_known_hosts
