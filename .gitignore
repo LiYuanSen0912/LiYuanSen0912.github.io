@@ -2,3 +2,5 @@ node_modules/
 public/
 db.json
 .deploy_git/
+.github-deploy-key
+.github-deploy-key.pub
