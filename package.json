@@ -1,0 +1,23 @@
+{
+  "name": "liyuansen0912-github-io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lys 的个人博客",
+  "scripts": {
+    "build": "node tools/build.js",
+    "clean": "node tools/build.js --clean"
+  },
+  "dependencies": {
+    "hexo": "^8.1.1",
+    "hexo-generator-archive": "^2.0.0",
+    "hexo-generator-category": "^2.0.0",
+    "hexo-generator-index": "^4.0.0",
+    "hexo-generator-tag": "^2.0.0",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-marked": "^7.0.0",
+    "hexo-server": "^3.0.0"
+  },
+  "devDependencies": {
+    "hexo-cli": "^4.3.2"
+  }
+}

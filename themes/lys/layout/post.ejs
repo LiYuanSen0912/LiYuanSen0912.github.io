@@ -1,0 +1,8 @@
+<%- partial('_partial/head') %>
+<article class="article" id="top">
+  <a class="back-link" href="<%- url_for('/') %>">← 返回文章列表</a>
+  <p class="eyebrow"><%= page.categories.map(c => c.name).join(' · ') || '随笔' %> · <%= date(page.date, 'YYYY.MM.DD') %></p>
+  <h1><%= page.title %></h1>
+  <div class="article-content"><%- page.content %></div>
+</article>
+<%- partial('_partial/footer') %>

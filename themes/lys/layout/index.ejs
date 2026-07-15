@@ -1,0 +1,28 @@
+<%- partial('_partial/head') %>
+<section class="hero" id="top">
+  <p class="eyebrow">个人博客 · <%= new Date().getFullYear() %></p>
+  <h1>把生活里细小的<br><em>光</em>，写下来。</h1>
+  <p class="intro">你好，我是 <%= config.author %>。这里收集关于技术、创作，以及慢慢长成自己的日常观察。</p>
+  <a class="scroll-link" href="#essays">阅读近作 <span>↓</span></a>
+</section>
+<section class="essays" id="essays">
+  <div class="section-heading"><p class="eyebrow">最近文章</p><h2>思考与记录</h2></div>
+  <div class="post-list">
+    <% page.posts.each(function(post, index) { %>
+      <article class="post">
+        <div class="post-number"><%= String(index + 1).padStart(2, '0') %></div>
+        <div class="post-content">
+          <p class="post-meta"><%= post.categories.map(c => c.name).join(' · ') || '随笔' %> · <%= date(post.date, 'YYYY.MM.DD') %></p>
+          <h3><a href="<%- url_for(post.path) %>"><%= post.title %></a></h3>
+          <p><%= post.excerpt || strip_html(post.content).substring(0, 85) + '…' %></p>
+          <a class="read-more" href="<%- url_for(post.path) %>">继续阅读 <span>↗</span></a>
+        </div>
+      </article>
+    <% }) %>
+  </div>
+</section>
+<section class="about">
+  <div><p class="eyebrow">关于我</p><h2>保持好奇，<br>认真生活。</h2></div>
+  <div class="about-copy"><p>我相信每个人都值得拥有一个安静的角落，放下所见、所想与所爱。</p><p>如果你也喜欢创造、阅读或漫无目的地思考，欢迎在这里停留一会儿。</p><a class="outline-link" href="https://github.com/LiYuanSen0912" target="_blank" rel="noreferrer">GitHub <span>↗</span></a></div>
+</section>
+<%- partial('_partial/footer') %>

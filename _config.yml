@@ -1,0 +1,23 @@
+title: Lys 的小宇宙
+subtitle: 把生活里细小的光，写下来。
+description: 关于技术、创作，以及慢慢长成自己的日常观察。
+author: Lys
+language: zh-CN
+timezone: Asia/Shanghai
+url: https://LiYuanSen0912.github.io
+root: /
+permalink: :year/:month/:day/:title/
+theme: lys
+
+per_page: 8
+pagination_dir: page
+
+archive_dir: archives
+category_dir: categories
+tag_dir: tags
+
+highlight:
+  enable: true
+  line_number: false
+  auto_detect: false
+  tab_replace: ''
