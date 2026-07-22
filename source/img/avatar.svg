@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Lys avatar">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6677e8"/>
+      <stop offset="1" stop-color="#9d7ae8"/>
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" rx="78" fill="url(#g)"/>
+  <circle cx="178" cy="58" r="26" fill="#b7efe3" opacity=".9"/>
+  <path d="M74 58v116h96v-28h-61V58z" fill="#fff"/>
+  <path d="M110 132h60v42h-60z" fill="#dce1ff"/>
+</svg>

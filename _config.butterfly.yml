@@ -1,0 +1,151 @@
+# Butterfly 的站点级定制。主题本体通过 npm 维护，升级时不会覆盖这里的设置。
+
+nav:
+  fixed: true
+
+menu:
+  首页: / || fas fa-house
+  归档: /archives/ || fas fa-box-archive
+  分类: /categories/ || fas fa-folder-open
+  标签: /tags/ || fas fa-tags
+  关于: /about/ || fas fa-user-astronaut
+
+social:
+  fab fa-github: https://github.com/LiYuanSen0912 || GitHub || '#24292f'
+
+favicon: /favicon.svg
+
+avatar:
+  img: /img/avatar.svg
+  effect: true
+
+# 以干净的留白代替外部横幅图片，避免第三方图片拖慢页面。
+disable_top_img: false
+default_top_img: /img/hero.svg
+index_img: /img/hero.svg
+archive_img: /img/hero.svg
+tag_img: /img/hero.svg
+category_img: /img/hero.svg
+background: '#f5f7fb'
+
+subtitle:
+  enable: true
+  effect: false
+  sub:
+    - 把生活里细小的光，写下来。
+
+index_layout: 3
+index_post_content:
+  method: 2
+  length: 170
+
+code_blocks:
+  theme: ocean
+  macStyle: true
+  copy: true
+  language: true
+  word_wrap: true
+
+toc:
+  post: true
+  number: true
+  expand: false
+  scroll_percent: true
+
+post_meta:
+  page:
+    date_type: created
+    date_format: date
+    categories: true
+    tags: true
+  post:
+    position: left
+    date_type: both
+    date_format: date
+    categories: true
+    tags: true
+
+post_copyright:
+  enable: true
+  decode: false
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+post_edit:
+  enable: true
+  url: https://github.com/LiYuanSen0912/LiYuanSen0912.github.io/edit/main/source/
+
+related_post:
+  enable: true
+  limit: 4
+
+footer:
+  owner:
+    enable: true
+    since: 2026
+  copyright:
+    enable: false
+  custom_text: '慢慢记录，认真生活。'
+
+aside:
+  enable: true
+  position: right
+  card_author:
+    enable: true
+    description: 在技术、创作与生活之间慢慢生长。
+    button:
+      enable: true
+      icon: fab fa-github
+      text: 访问 GitHub
+      link: https://github.com/LiYuanSen0912
+  card_announcement:
+    enable: true
+    content: '欢迎来到 Lys 的数字花园。'
+  card_recent_post:
+    enable: true
+    limit: 5
+  card_categories:
+    enable: true
+  card_tags:
+    enable: true
+    color: true
+    orderby: random
+  card_archives:
+    enable: true
+    type: monthly
+    limit: 6
+  card_webinfo:
+    enable: true
+    post_count: true
+    last_push_date: true
+
+darkmode:
+  enable: true
+  button: true
+  autoChangeMode: 1
+
+readmode: true
+rightside_scroll_percent: true
+
+beautify:
+  enable: true
+  field: site
+  title_prefix_icon: '\\f0c1'
+  title_prefix_icon_color: '#6b7cff'
+
+font:
+  global_font_size: 16px
+  code_font_size: 0.9em
+  font_family: 'Inter, "PingFang SC", "Microsoft YaHei", sans-serif'
+  code_font_family: '"Cascadia Code", Consolas, monospace'
+
+inject:
+  head:
+    - <link rel="stylesheet" href="/css/butterfly-custom.css">
+  bottom:
+    - <script src="/js/garden-companion.js"></script>
+
+# 保持主题内置文件本地加载，避免页面核心样式依赖外部 CDN。
+CDN:
+  internal_provider: local
+  third_party_provider: cdnjs
