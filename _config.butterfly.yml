@@ -13,19 +13,19 @@ menu:
 social:
   fab fa-github: https://github.com/LiYuanSen0912 || GitHub || '#24292f'
 
-favicon: /favicon.svg
+favicon: https://lys-blog-1312655971.cos.ap-guangzhou.myqcloud.com/favicon.svg
 
 avatar:
-  img: /img/avatar.svg
+  img: https://lys-blog-1312655971.cos.ap-guangzhou.myqcloud.com/img/avatar.svg
   effect: true
 
 # 以干净的留白代替外部横幅图片，避免第三方图片拖慢页面。
 disable_top_img: false
-default_top_img: /img/hero.svg
-index_img: /img/hero.svg
-archive_img: /img/hero.svg
-tag_img: /img/hero.svg
-category_img: /img/hero.svg
+default_top_img: https://lys-blog-1312655971.cos.ap-guangzhou.myqcloud.com/img/hero.svg
+index_img: https://lys-blog-1312655971.cos.ap-guangzhou.myqcloud.com/img/hero.svg
+archive_img: https://lys-blog-1312655971.cos.ap-guangzhou.myqcloud.com/img/hero.svg
+tag_img: https://lys-blog-1312655971.cos.ap-guangzhou.myqcloud.com/img/hero.svg
+category_img: https://lys-blog-1312655971.cos.ap-guangzhou.myqcloud.com/img/hero.svg
 background: '#f5f7fb'
 
 subtitle:

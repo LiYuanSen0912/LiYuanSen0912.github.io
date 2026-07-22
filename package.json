@@ -8,6 +8,7 @@
     "clean": "node tools/build.js --clean"
   },
   "dependencies": {
+    "cos-nodejs-sdk-v5": "^3.0.0",
     "hexo": "^8.1.1",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",

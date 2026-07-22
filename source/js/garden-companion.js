@@ -1,4 +1,5 @@
 (() => {
+  const cosAssetOrigin = 'https://lys-blog-1312655971.cos.ap-guangzhou.myqcloud.com';
   const messages = [
     '今天也要为好奇心留一点时间。',
     '慢一点没关系，花园在生长。',
@@ -116,7 +117,9 @@
       if (!track) return;
       title.textContent = track.title;
       artist.textContent = track.artist || 'Lys 的音乐收藏';
-      audio.src = track.src;
+      audio.src = /^https?:\/\//i.test(track.src)
+        ? track.src
+        : `${cosAssetOrigin}/${track.src.replace(/^\/+/, '')}`;
       progress.value = '0';
     };
 
