@@ -75,6 +75,23 @@ post_edit:
   enable: true
   url: https://github.com/LiYuanSen0912/LiYuanSen0912.github.io/edit/main/source/
 
+comments:
+  use: Giscus
+  text: true
+  lazyload: true
+  count: false
+  card_post_count: false
+
+giscus:
+  repo: LiYuanSen0912/LiYuanSen0912.github.io
+  repo_id: R_kgDOTZbyeg
+  category_id: DIC_kwDOTZbyes4DBvR2
+  light_theme: light
+  dark_theme: dark
+  option:
+    data-lang: zh-CN
+    data-input-position: top
+
 related_post:
   enable: true
   limit: 4
