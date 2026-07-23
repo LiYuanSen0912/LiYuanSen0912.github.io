@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 310" role="img" aria-label="Garden companion">
+  <defs>
+    <linearGradient id="cloak" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7b89e8"/><stop offset="1" stop-color="#b892e9"/></linearGradient>
+    <linearGradient id="hair" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7f6ff"/><stop offset="1" stop-color="#dcd8fb"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-25%" width="160%" height="170%"><feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#535487" flood-opacity=".2"/></filter>
+  </defs>
+  <ellipse cx="110" cy="282" rx="65" ry="11" fill="#59608f" opacity=".16"/>
+  <g filter="url(#shadow)">
+    <path d="M59 264c7-59 18-90 51-92 41-3 54 32 58 92-25 16-83 17-109 0Z" fill="url(#cloak)"/>
+    <path d="M67 263c13-11 23-17 43-17 21 0 38 6 52 17-9 18-31 28-52 28-21 0-37-8-43-28Z" fill="#5f6fd7" opacity=".75"/>
+    <path d="M92 238h36l9 33H83l9-33Z" fill="#f7f8ff" opacity=".95"/>
+    <path d="M70 141c-3-42 17-70 42-70 29 0 48 27 42 71l-6 39c-7 22-24 36-39 36-18 0-35-14-40-37l1-39Z" fill="#ffe9dc"/>
+    <path d="M68 141c-2-43 24-70 51-70 27 0 43 22 36 66-9-13-18-21-33-22-23-2-36 12-53 26l-1 0Z" fill="url(#hair)"/>
+    <path d="M69 140c-2 19 0 37 8 53-18-12-23-35-15-49l7-4Z" fill="#d6d1fb"/>
+    <path d="M151 138c4 23 1 41-9 55 17-12 24-34 15-50l-6-5Z" fill="#d6d1fb"/>
+    <ellipse cx="94" cy="157" rx="4.3" ry="5.6" fill="#515fbe"/><ellipse cx="128" cy="157" rx="4.3" ry="5.6" fill="#515fbe"/>
+    <path d="M101 178c6 4 12 4 18 0" fill="none" stroke="#d7839f" stroke-width="3" stroke-linecap="round"/>
+    <ellipse cx="83" cy="171" rx="8" ry="4" fill="#f7b9c4" opacity=".48"/><ellipse cx="139" cy="171" rx="8" ry="4" fill="#f7b9c4" opacity=".48"/>
+    <path d="M99 74c-9-22-2-43 15-54 5 22-2 41-15 54Z" fill="#a8ead5"/>
+    <path d="M100 74C81 55 64 57 54 70c18 14 35 12 46 4Z" fill="#c5f1e1"/>
+    <circle cx="158" cy="89" r="11" fill="#b9f3df" opacity=".9"/><circle cx="52" cy="119" r="6" fill="#d8d3ff" opacity=".85"/>
+  </g>
+</svg>

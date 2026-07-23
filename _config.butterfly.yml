@@ -16,7 +16,7 @@ social:
 favicon: https://lys-blog-1312655971.cos.ap-guangzhou.myqcloud.com/favicon.svg
 
 avatar:
-  img: https://lys-blog-1312655971.cos.ap-guangzhou.myqcloud.com/img/avatar-garden.svg
+  img: https://lys-blog-1312655971.cos.ap-guangzhou.myqcloud.com/img/avatar.svg
   effect: true
 
 # 以干净的留白代替外部横幅图片，避免第三方图片拖慢页面。
