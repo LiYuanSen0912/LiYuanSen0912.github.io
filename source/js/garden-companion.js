@@ -13,10 +13,6 @@
 
     const clickWords = ['种下一点好奇', '今天也会发光', '灵感 +1', '慢慢生长', '记录此刻', '继续探索'];
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const isLocalPreview = ['127.0.0.1', 'localhost'].includes(window.location.hostname);
-    const companionAsset = isLocalPreview
-      ? '/img/garden-companion.svg'
-      : `${cosAssetOrigin}/img/garden-companion.svg`;
 
     document.addEventListener('click', (event) => {
       if (reducedMotion || event.target.closest('a, button, input, textarea, select, summary, #lys-companion, #lys-music-player')) return;
@@ -33,14 +29,13 @@
     companion.id = 'lys-companion';
     companion.innerHTML = `
       <div class="lys-pet-dialog" aria-live="polite">
-        <strong>花园小搭档</strong>
+        <strong>猫咪花园管理员</strong>
         <p>${messages[0]}</p>
         <button type="button" class="lys-pet-hide">收起</button>
       </div>
-      <button type="button" class="lys-pet" aria-label="打开花园小搭档" title="点击和花园小搭档聊天">
-        <span class="lys-pet-aura"></span>
-        <img src="${companionAsset}" alt="花园小搭档">
-        <span class="lys-pet-status"><i></i> online</span>
+      <button type="button" class="lys-pet" aria-label="打开猫咪花园管理员的问候" title="点击和猫咪打个招呼">
+        <img src="/img/openmoji-cat.svg" alt="开源猫咪桌宠">
+        <span class="lys-pet-status"><i></i> pet me</span>
       </button>`;
     document.body.append(companion);
 
@@ -61,9 +56,12 @@
     });
     companion.querySelector('.lys-pet-hide').addEventListener('click', () => dialog.classList.remove('is-visible'));
     pet.addEventListener('pointerdown', (event) => {
-      dragging = true; moved = false; pet.setPointerCapture(event.pointerId);
+      dragging = true;
+      moved = false;
+      pet.setPointerCapture(event.pointerId);
       const rect = companion.getBoundingClientRect();
-      offsetX = event.clientX - rect.left; offsetY = event.clientY - rect.top;
+      offsetX = event.clientX - rect.left;
+      offsetY = event.clientY - rect.top;
     });
     pet.addEventListener('pointermove', (event) => {
       if (!dragging) return;
@@ -72,9 +70,13 @@
       const maxY = window.innerHeight - companion.offsetHeight - 14;
       companion.style.left = `${Math.max(14, Math.min(maxX, event.clientX - offsetX))}px`;
       companion.style.top = `${Math.max(14, Math.min(maxY, event.clientY - offsetY))}px`;
-      companion.style.right = 'auto'; companion.style.bottom = 'auto';
+      companion.style.right = 'auto';
+      companion.style.bottom = 'auto';
     });
-    pet.addEventListener('pointerup', (event) => { dragging = false; pet.releasePointerCapture(event.pointerId); });
+    pet.addEventListener('pointerup', (event) => {
+      dragging = false;
+      pet.releasePointerCapture(event.pointerId);
+    });
 
     const player = document.createElement('section');
     player.id = 'lys-music-player';
@@ -119,7 +121,8 @@
     const changeTrack = (delta) => {
       if (!tracks.length) return;
       index = (index + delta + tracks.length) % tracks.length;
-      renderTrack(); audio.play();
+      renderTrack();
+      audio.play();
     };
     play.addEventListener('click', async () => {
       if (!tracks.length) {
@@ -139,7 +142,7 @@
     try {
       const response = await fetch('/music/playlist.json');
       const data = await response.json();
-      tracks = Array.isArray(data.tracks) ? data.tracks.filter(track => track.title && track.src) : [];
+      tracks = Array.isArray(data.tracks) ? data.tracks.filter((track) => track.title && track.src) : [];
       if (tracks.length) renderTrack();
     } catch (_) { /* The empty player remains intentional. */ }
   });

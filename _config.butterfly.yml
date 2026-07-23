@@ -17,7 +17,7 @@ favicon: https://lys-blog-1312655971.cos.ap-guangzhou.myqcloud.com/favicon.svg
 
 avatar:
   img: https://lys-blog-1312655971.cos.ap-guangzhou.myqcloud.com/img/avatar.svg
-  effect: true
+  effect: false
 
 # 以干净的留白代替外部横幅图片，避免第三方图片拖慢页面。
 disable_top_img: false
@@ -199,7 +199,7 @@ inject:
   head:
     - <link rel="stylesheet" href="/css/butterfly-custom.css">
   bottom:
-    - <script src="/js/garden-companion.js"></script>
+    - <script src="/js/garden-companion.js?v=openmoji-pet-20260723"></script>
 
 # 保持主题内置文件本地加载，避免页面核心样式依赖外部 CDN。
 CDN:
