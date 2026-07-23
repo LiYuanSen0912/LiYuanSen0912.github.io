@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Lys digital garden avatar">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#5769d7"/><stop offset=".56" stop-color="#9379df"/><stop offset="1" stop-color="#63c8b2"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="6" stdDeviation="7" flood-opacity=".24"/></filter></defs>
+  <rect width="240" height="240" rx="76" fill="url(#g)"/><circle cx="184" cy="55" r="28" fill="#c3f5e7" opacity=".92"/><circle cx="60" cy="196" r="39" fill="#d7d4ff" opacity=".26"/>
+  <g filter="url(#s)"><path d="M61 71c15-29 43-40 67-25 10 6 16 14 19 25 20 0 35 14 35 34 0 16-10 29-25 33-5 28-29 45-58 41-27-4-46-24-45-50-16-7-24-24-19-40 4-11 13-17 26-18Z" fill="#fff"/><path d="M77 109c10-12 24-18 43-18s33 6 43 18" fill="none" stroke="#7887dc" stroke-width="7" stroke-linecap="round"/><circle cx="91" cy="126" r="6" fill="#4054bc"/><circle cx="149" cy="126" r="6" fill="#4054bc"/><path d="M100 149c13 10 28 10 40 0" fill="none" stroke="#4054bc" stroke-width="6" stroke-linecap="round"/></g>
+  <path d="M158 56c1-18 14-29 30-29-1 17-12 28-30 29Z" fill="#b9f4df"/><path d="M159 57c-14-11-29-9-39 3 14 10 28 8 39-3Z" fill="#d5f8ea"/>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-label="Notes in a digital garden">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#edf8f5"/><stop offset=".5" stop-color="#f5efff"/><stop offset="1" stop-color="#dce7ff"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="19" flood-color="#5e6394" flood-opacity=".19"/></filter>
+  </defs>
+  <rect width="1200" height="720" rx="52" fill="url(#bg)"/>
+  <circle cx="190" cy="155" r="102" fill="#b9efdf" opacity=".78"/><circle cx="1040" cy="592" r="164" fill="#bca3ef" opacity=".33"/><circle cx="1072" cy="140" r="55" fill="#ffcda9" opacity=".74"/>
+  <g filter="url(#shadow)" transform="rotate(-6 565 372)"><rect x="310" y="118" width="572" height="482" rx="18" fill="#fffefb"/><path d="M310 190h572M310 278h572" stroke="#e8e1f2" stroke-width="3"/><rect x="361" y="153" width="192" height="17" rx="8.5" fill="#8f78ce" opacity=".85"/><path d="M374 242h308M374 333h362M374 378h293M374 423h339M374 468h260" stroke="#c2bad3" stroke-width="12" stroke-linecap="round"/><path d="M374 520c95-58 179-18 236-91 43-55 112-60 161-9" fill="none" stroke="#63bea9" stroke-width="9" stroke-linecap="round"/><path d="M731 217c25-30 63-17 63 17 0 35-46 44-63 13Z" fill="#f5bb8c"/></g>
+  <path d="M199 507c-42-54-14-132 56-148 73-17 122 55 95 118-24 56-94 54-105 113" fill="none" stroke="#66bfa9" stroke-width="14" stroke-linecap="round"/><path d="M199 507c-8-43-46-62-75-50-25 10-31 44-9 61 31 23 66 0 84-11Z" fill="#80d5bd"/>
+  <text x="90" y="650" fill="#75648e" font-family="Georgia, serif" font-size="38" letter-spacing="6">SMALL NOTES, LONG ECHOES</text>
+</svg>

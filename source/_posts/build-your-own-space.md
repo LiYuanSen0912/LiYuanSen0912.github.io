@@ -1,6 +1,7 @@
 ---
 title: 从零开始，做一个真正属于自己的网站
 date: 2026-07-08 20:30:00
+cover: https://lys-blog-1312655971.cos.ap-guangzhou.myqcloud.com/img/garden-code.svg
 tags:
   - 技术
   - 创作

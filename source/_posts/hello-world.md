@@ -1,6 +1,7 @@
 ---
 title: 给未来的自己留一盏灯
 date: 2026-07-15 10:00:00
+cover: https://lys-blog-1312655971.cos.ap-guangzhou.myqcloud.com/img/garden-notes.svg
 tags:
   - 随笔
 categories:

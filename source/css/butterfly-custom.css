@@ -323,3 +323,169 @@ body {
   #lys-music-player { bottom: 1rem; left: 1rem; }
   .lys-pet-dialog { right: -0.15rem; }
 }
+
+/* 首页与文章：在干净的留白上增加层次，但不牺牲阅读对比度。 */
+#page-header.full_page::before {
+  background: linear-gradient(180deg, rgba(245, 247, 251, 0.04), rgba(245, 247, 251, 0.42));
+}
+
+#page-header.full_page #site-info {
+  padding: 2.25rem 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.52);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 18px 55px rgba(73, 78, 137, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+#aside-content .card-widget,
+#post,
+#page,
+#recent-posts > .recent-post-item {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(18px);
+}
+
+[data-theme='dark'] #aside-content .card-widget,
+[data-theme='dark'] #post,
+[data-theme='dark'] #page,
+[data-theme='dark'] #recent-posts > .recent-post-item {
+  background: rgba(23, 29, 52, 0.72);
+}
+
+#aside-content .card-info .avatar-img {
+  display: inline-flex;
+  padding: 0.35rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--lys-indigo), var(--lys-mint), var(--lys-violet));
+  box-shadow: 0 10px 24px rgba(85, 98, 193, 0.22);
+}
+
+#aside-content .card-info .avatar-img img,
+#sidebar .avatar-img img {
+  border: 3px solid rgba(255, 255, 255, 0.88);
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.45s cubic-bezier(.2, .8, .2, 1), filter 0.45s ease;
+}
+
+#aside-content .card-info .avatar-img:hover img,
+#sidebar .avatar-img:hover img {
+  filter: saturate(1.12);
+  transform: rotate(7deg) scale(1.06);
+}
+
+#recent-posts > .recent-post-item {
+  min-height: 16.75rem;
+}
+
+#recent-posts > .recent-post-item .post_cover {
+  position: relative;
+  overflow: hidden;
+}
+
+#recent-posts > .recent-post-item .post_cover::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, rgba(47, 58, 129, 0.08), transparent 55%);
+  content: '';
+  transition: opacity 0.35s ease;
+}
+
+#recent-posts > .recent-post-item .post_cover img {
+  opacity: 0.93;
+  filter: saturate(0.94) contrast(1.03);
+  transform: scale(1.01);
+  transition: transform 0.65s cubic-bezier(.2, .75, .2, 1), filter 0.45s ease, opacity 0.45s ease;
+}
+
+#recent-posts > .recent-post-item:hover .post_cover img {
+  opacity: 1;
+  filter: saturate(1.12) contrast(1.05);
+  transform: scale(1.08);
+}
+
+#recent-posts > .recent-post-item:hover .post_cover::after { opacity: 0.28; }
+
+#recent-posts > .recent-post-item .recent-post-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#recent-posts > .recent-post-item .content {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* 代码块保留 Butterfly 的功能按钮，并增强为更清晰的 macOS 工具栏。 */
+#article-container figure.highlight {
+  overflow: hidden;
+  border: 1px solid rgba(116, 129, 207, 0.24);
+  border-radius: 15px;
+  box-shadow: 0 14px 36px rgba(26, 36, 78, 0.18);
+}
+
+#article-container figure.highlight .highlight-tools {
+  min-height: 2.6rem;
+  padding: 0 0.85rem;
+  background: linear-gradient(90deg, rgba(35, 43, 79, 0.98), rgba(45, 56, 103, 0.98));
+}
+
+#article-container figure.highlight .macStyle > * {
+  width: 0.75rem;
+  height: 0.75rem;
+  box-shadow: none;
+}
+
+#article-container figure.highlight .code-lang {
+  color: rgba(236, 241, 255, 0.7);
+  font-family: 'Cascadia Code', Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+
+#article-container figure.highlight .copy-button,
+#article-container figure.highlight .fullpage-button,
+#article-container figure.highlight .expand {
+  color: rgba(236, 241, 255, 0.82);
+}
+
+#article-container figure.highlight .copy-button:hover,
+#article-container figure.highlight .fullpage-button:hover,
+#article-container figure.highlight .expand:hover {
+  color: #fff;
+  transform: scale(1.12);
+}
+
+.lys-click-word {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  color: var(--lys-indigo);
+  font-family: Georgia, 'Noto Serif SC', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-shadow: 0 2px 12px rgba(98, 114, 228, 0.24);
+  animation: lys-click-word-rise 1.15s cubic-bezier(.16, .84, .42, 1) forwards;
+}
+
+@keyframes lys-click-word-rise {
+  from { opacity: 0; transform: translate(-50%, -15%) scale(0.78) rotate(-3deg); }
+  22% { opacity: 1; }
+  to { opacity: 0; transform: translate(-50%, -98px) scale(1.16) rotate(3deg); }
+}
+
+@media screen and (max-width: 768px) {
+  #page-header.full_page #site-info { padding: 1.6rem 1.2rem; border-radius: 20px; }
+  #recent-posts > .recent-post-item { min-height: 0; }
+  #recent-posts > .recent-post-item .content { -webkit-line-clamp: 4; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}

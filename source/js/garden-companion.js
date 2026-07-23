@@ -19,6 +19,23 @@
     </svg>`;
 
   document.addEventListener('DOMContentLoaded', async () => {
+    const clickWords = ['种下一点好奇', '今天也会发光', '灵感 +1', '慢慢生长', '记录此刻', '继续探索'];
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    document.addEventListener('click', (event) => {
+      if (reducedMotion) return;
+      const interactive = event.target.closest('a, button, input, textarea, select, summary, #lys-companion, #lys-music-player');
+      if (interactive) return;
+
+      const word = document.createElement('span');
+      word.className = 'lys-click-word';
+      word.textContent = clickWords[Math.floor(Math.random() * clickWords.length)];
+      word.style.left = `${event.clientX}px`;
+      word.style.top = `${event.clientY}px`;
+      document.body.append(word);
+      window.setTimeout(() => word.remove(), 1200);
+    });
+
     const shell = document.createElement('section');
     shell.id = 'lys-companion';
     shell.innerHTML = `

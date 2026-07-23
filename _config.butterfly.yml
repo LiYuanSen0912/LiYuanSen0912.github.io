@@ -16,7 +16,7 @@ social:
 favicon: https://lys-blog-1312655971.cos.ap-guangzhou.myqcloud.com/favicon.svg
 
 avatar:
-  img: https://lys-blog-1312655971.cos.ap-guangzhou.myqcloud.com/img/avatar.svg
+  img: https://lys-blog-1312655971.cos.ap-guangzhou.myqcloud.com/img/avatar-garden.svg
   effect: true
 
 # 以干净的留白代替外部横幅图片，避免第三方图片拖慢页面。
@@ -42,12 +42,16 @@ index_post_content:
 code_blocks:
   theme: ocean
   macStyle: true
+  height_limit: 460
   copy: true
   language: true
-  word_wrap: true
+  word_wrap: false
+  shrink: true
+  fullpage: true
 
 toc:
   post: true
+  page: true
   number: true
   expand: false
   scroll_percent: true
@@ -96,6 +100,35 @@ related_post:
   enable: true
   limit: 4
 
+post_pagination: 1
+
+copy:
+  enable: true
+  copyright:
+    enable: true
+    limit_count: 120
+
+photofigcaption: true
+category_ui: index
+tag_ui: index
+rounded_corners_ui: true
+text_align_justify: true
+
+mask:
+  header: true
+  footer: true
+
+preloader:
+  enable: true
+  source: 1
+
+enter_transitions: true
+
+hr_icon:
+  enable: true
+  icon: '\\f005'
+  icon_top: -12px
+
 footer:
   owner:
     enable: true
@@ -121,6 +154,7 @@ aside:
   card_recent_post:
     enable: true
     limit: 5
+    sort: date
   card_categories:
     enable: true
   card_tags:
@@ -143,6 +177,11 @@ darkmode:
 
 readmode: true
 rightside_scroll_percent: true
+rightside_config_animation: true
+rightside_item_order:
+  enable: true
+  hide: readmode,darkmode,hideAside
+  show: toc,comment
 
 beautify:
   enable: true
